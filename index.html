@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klarheit am Berg | Andre Arndt - Bergwanderfuhrer & Business-Coach</title>
+    <meta name="description" content="Klarheits-Tage am Berg fur Fuhrungskrafte, Unternehmer, Grunder und Menschen die den nachsten Schritt gehen wollen - mit Andre Arndt aus Reit im Winkl. Staatlich geprufter Bergwanderfuhrer und Business-Coach IHK.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #2d5a3d;
+            --green-light: #3a7350;
+            --green-dark: #1e3d2a;
+            --amber: #d4891a;
+            --amber-light: #e09a2e;
+            --cream: #f7f5f2;
+            --cream-dark: #efe9e1;
+            --text: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            line-height: 1.25;
+            font-weight: 600;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+        h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+        h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 0.75rem;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(247, 245, 242, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(45, 90, 61, 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--green);
+            letter-spacing: -0.3px;
+        }
+
+        .nav-logo span {
+            color: var(--amber);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--amber);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--green);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--green);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: rgba(247, 245, 242, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(45, 90, 61, 0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.8rem 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 72px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(30, 61, 42, 0.82) 0%, rgba(45, 90, 61, 0.7) 40%, rgba(74, 124, 92, 0.65) 100%),
+                url('images/schneeschuh.jpg') center/cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(212, 137, 26, 0.1) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
+        }
+
+        /* Mountain silhouette SVG */
+        .hero-mountains {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .hero-mountains svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 580px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--amber);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 137, 26, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--green);
+            border: 2px solid var(--green);
+        }
+
+        .btn-outline:hover {
+            background: var(--green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== KENNST DU DAS ===== */
+        .pain-section {
+            background: var(--white);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .pain-card {
+            background: var(--cream);
+            border-radius: var(--radius);
+            padding: 2rem 1.75rem;
+            border-left: 3px solid var(--amber);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .pain-card p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ===== WARUM DIE BERGE ===== */
+        .berge-section {
+            position: relative;
+            background: var(--green-dark);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .berge-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(30, 61, 42, 0.92) 0%, rgba(45, 90, 61, 0.88) 100%),
+                url('images/reit_panorama.jpg') center/cover no-repeat;
+        }
+
+        /* ===== PANORAMA DIVIDER ===== */
+        .panorama-divider {
+            width: 100%;
+            height: 360px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .panorama-divider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+
+        .panorama-divider::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, var(--cream) 0%, transparent 20%, transparent 80%, var(--white) 100%);
+        }
+
+        .berge-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .berge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .berge-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .berge-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(212, 137, 26, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .berge-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--amber);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .berge-item h3 {
+            color: var(--white);
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+
+        .berge-item p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+        }
+
+        /* ===== WAS MOEGLICH IST ===== */
+        .results-section {
+            background: var(--cream);
+        }
+
+        .results-list {
+            margin-top: 2.5rem;
+            display: grid;
+            gap: 1rem;
+            max-width: 640px;
+        }
+
+        .result-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .result-check {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: rgba(45, 90, 61, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .result-check svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--green);
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        .result-item p {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* ===== UEBER MICH ===== */
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text blockquote {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--amber);
+        }
+
+        .about-quote {
+            font-style: italic;
+            color: var(--green);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(45, 90, 61, 0.05);
+            border-radius: var(--radius);
+        }
+
+        .about-certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .cert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--cream);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .cert-badge svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--amber);
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        /* ===== ANGEBOTE ===== */
+        .offers-section {
+            background: var(--cream);
+        }
+
+        .accordion {
+            margin-top: 2.5rem;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .accordion-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            font-family: inherit;
+            text-align: left;
+        }
+
+        .accordion-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .accordion-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(45, 90, 61, 0.1);
+            color: var(--green);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .accordion-header h3 {
+            font-size: 1.15rem;
+            color: var(--text);
+        }
+
+        .accordion-price {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--amber);
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        .accordion-chevron {
+            width: 20px;
+            height: 20px;
+            stroke: var(--text-light);
+            fill: none;
+            stroke-width: 2;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .accordion-item.active .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .accordion-item.active .accordion-body {
+            max-height: 300px;
+        }
+
+        .accordion-body-inner {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== KOOPERATIONEN ===== */
+        .coop-section {
+            background: var(--white);
+        }
+
+        .coop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .coop-card {
+            background: var(--cream);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 3px solid var(--green);
+        }
+
+        .coop-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .coop-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .coop-card h3 {
+            color: var(--green);
+            margin-bottom: 0.75rem;
+        }
+
+        .coop-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .coop-card .coop-meta {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--amber);
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            background: var(--cream);
+        }
+
+        .faq-list {
+            margin-top: 2.5rem;
+            max-width: 720px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            font-family: inherit;
+            text-align: left;
+        }
+
+        .faq-question h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text);
+            padding-right: 1rem;
+        }
+
+        .faq-question .accordion-chevron {
+            stroke: var(--green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .accordion-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.25rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ===== KONTAKT ===== */
+        .contact-section {
+            background: var(--white);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2.5rem;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--green);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-email svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--amber);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .contact-form {
+            background: var(--cream);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1.5px solid rgba(0,0,0,0.1);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: var(--white);
+            color: var(--text);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            accent-color: var(--green);
+            cursor: pointer;
+        }
+
+        .form-checkbox label {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Honeypot */
+        .ohnehonig {
+            position: absolute;
+            left: -9999px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--green-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 2.5rem 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--amber);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero-content {
+                padding: 2rem 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 280px;
+                aspect-ratio: 1;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .berge-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .accordion-header {
+                padding: 1.25rem 1.25rem;
+                flex-wrap: wrap;
+            }
+
+            .accordion-body-inner {
+                padding: 0 1.25rem 1.25rem;
+            }
+
+            .accordion-price {
+                margin-left: 0;
+                margin-top: 0.25rem;
+                width: 100%;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Klarheit <span>am Berg</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#offers">Angebote</a></li>
+                <li><a href="#coop">Kooperationen</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about">Über mich</a>
+            <a href="#offers">Angebote</a>
+            <a href="#coop">Kooperationen</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-mountains">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="rgba(255,255,255,0.05)" d="M0,224L60,197.3C120,171,240,117,360,122.7C480,128,600,192,720,213.3C840,235,960,213,1080,186.7C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
+                <path fill="rgba(247,245,242,0.08)" d="M0,288L48,272C96,256,192,224,288,218.7C384,213,480,235,576,250.7C672,267,768,277,864,261.3C960,245,1056,203,1152,192C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            </svg>
+        </div>
+        <div class="container hero-content">
+            <h1>Du weißt wohin du willst.<br>Aber der Kopf lässt dich nicht.</h1>
+            <p>Ich arbeite mit Unternehmern, Gründern und Führungskräften die den nächsten Schritt gehen wollen — oder die spüren dass es so nicht weitergehen kann. Manchmal braucht es jemanden der dir die Hand reicht.</p>
+            <a href="#contact" class="btn btn-primary">Erstgespräch vereinbaren</a>
+        </div>
+    </section>
+
+    <!-- ===== KENNST DU DAS ===== -->
+    <section class="pain-section" id="pain">
+        <div class="container">
+            <span class="section-label fade-in">Kennst du das?</span>
+            <h2 class="fade-in">Wenn der Kopf nicht aufhört.</h2>
+            <div class="pain-grid">
+                <div class="pain-card fade-in">
+                    <p>Du funktionierst. Aber du weißt nicht mehr wohin.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <p>Dein Kopf hört nachts nicht auf.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <p>Du weißt was zu tun wäre — aber du kommst nicht dazu.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <p>Der nächste Schritt ist unklar.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <p>Dein Unternehmen läuft — aber du bist am Limit.</p>
+                </div>
+                <div class="pain-card fade-in">
+                    <p>Du willst dich verändern — weißt aber nicht wo du anfangen sollst.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WARUM DIE BERGE ===== -->
+    <section class="berge-section" id="berge">
+        <div class="container berge-content">
+            <span class="section-label fade-in">Warum die Berge?</span>
+            <h2 class="fade-in" style="color: #fff;">Weil Klarheit nicht im Büro entsteht.</h2>
+            <div class="berge-grid">
+                <div class="berge-item fade-in">
+                    <div class="berge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Höhe schafft Abstand</h3>
+                        <p>Höhe und Bewegung schalten den Alltag ab. Was unten kreist, löst sich oben auf.</p>
+                    </div>
+                </div>
+                <div class="berge-item fade-in">
+                    <div class="berge-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <div>
+                        <h3>Weite gibt Perspektive</h3>
+                        <p>Die Weite der Berge schafft Perspektive die im Büro fehlt. Neue Sichtweisen entstehen im Gehen.</p>
+                    </div>
+                </div>
+                <div class="berge-item fade-in">
+                    <div class="berge-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div>
+                        <h3>Echte Gespräche</h3>
+                        <p>Echte Gespräche entstehen draußen — nicht in Seminarräumen. Ohne PowerPoint, ohne Fassade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WAS MOEGLICH IST ===== -->
+    <section class="results-section" id="results">
+        <div class="container">
+            <span class="section-label fade-in">Was möglich ist</span>
+            <h2 class="fade-in">Nach einem Tag weißt du wieder wohin.</h2>
+            <div class="results-list">
+                <div class="result-item fade-in">
+                    <div class="result-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Du hast Klarheit über deinen nächsten Schritt</p>
+                </div>
+                <div class="result-item fade-in">
+                    <div class="result-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Du hast Abstand vom Alltag gewonnen</p>
+                </div>
+                <div class="result-item fade-in">
+                    <div class="result-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Du hast eine ehrliche Analyse deiner Situation</p>
+                </div>
+                <div class="result-item fade-in">
+                    <div class="result-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Du weißt was du loslassen musst</p>
+                </div>
+                <div class="result-item fade-in">
+                    <div class="result-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Du gehst mit einem konkreten Plan</p>
+                </div>
+                <div class="result-item fade-in">
+                    <div class="result-check">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <p>Du weißt dass du nicht allein bist mit deinen Fragen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== UEBER MICH ===== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <span class="section-label fade-in">Über mich</span>
+            <h2 class="fade-in">André Arndt</h2>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="images/andre_business.jpg" alt="André Arndt" loading="lazy">
+                </div>
+                <div class="about-text fade-in">
+                    <blockquote>
+                        Über 35 Jahre in Vertrieb und Führung — verantwortlich für bis zu 100 Menschen, jahrelang an der Spitze. Bis ich gemerkt habe: ich bin vom Wollen ins Müssen gerutscht. Wenig Schlaf, kreisende Gedanken, Burnout. Ich habe die Reißleine gezogen — bewusst, selbstbestimmt.
+                    </blockquote>
+                    <p style="margin-bottom: 1rem; color: var(--text-light);">
+                        Heute lebe ich in Reit im Winkl, bin staatlich geprüfter Bergwanderführer und Business-Coach IHK. Ich stelle Fragen bis ich alles weiß. Erst dann arbeiten wir.
+                    </p>
+                    <div class="about-quote">
+                        "Irgendwann habe ich begriffen: Es reicht. Ab jetzt lebe ich wie ich will. Bewusst, selbstbestimmt, auf meinem Weg."
+                    </div>
+                    <p style="margin-bottom: 1rem; color: var(--text-light);">
+                        Bei einer großen Veranstaltung mit über 500 Menschen — viele davon Gründer und Unternehmer — hörte ich immer wieder dieselben Fragen: <em>Wie gehe ich den nächsten Schritt? Mein Unternehmen macht sechsstellige Umsätze und ich bin völlig fertig.</em> In dem Moment wurde mir klar: Es gibt so viele Menschen denen man die Hand reichen muss. Genau das will ich tun. Und wenn du das Gefühl hast dass du diese Unterstützung brauchst — klopf bei mir an.
+                    </p>
+                    <div class="about-certs">
+                        <span class="cert-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Business-Coach IHK
+                        </span>
+                        <span class="cert-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Staatl. gepr. Bergwanderführer
+                        </span>
+                        <span class="cert-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Haftpflichtversichert gem. § 16 K-BSFG
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PANORAMA DIVIDER ===== -->
+    <div class="panorama-divider">
+        <img src="images/winter_see.jpg" alt="Winterlandschaft bei Reit im Winkl" loading="lazy">
+    </div>
+
+    <!-- ===== ANGEBOTE ===== -->
+    <section class="offers-section" id="offers">
+        <div class="container">
+            <span class="section-label fade-in">Angebote</span>
+            <h2 class="fade-in">Formate die wirken.</h2>
+            <div class="accordion fade-in">
+                <!-- Klarheits-Tag -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <div class="accordion-header-left">
+                            <span class="accordion-tag">1:1</span>
+                            <h3>Klarheits-Tag</h3>
+                        </div>
+                        <span class="accordion-price">ab 280 EUR</span>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            Ganztag am Berg, 1:1. Wandern + Coaching. Du kommst mit Fragen, du gehst mit Klarheit. Ein Tag der mehr bewegt als viele Monate im Alltag.
+                        </div>
+                    </div>
+                </div>
+                <!-- Halber Klarheits-Tag -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <div class="accordion-header-left">
+                            <span class="accordion-tag">Fokus</span>
+                            <h3>Halber Klarheits-Tag</h3>
+                        </div>
+                        <span class="accordion-price">ab 150 EUR</span>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            3-4 Stunden, ein Thema, ein Ergebnis. Für Menschen die wenig Zeit haben aber viel klären wollen. Fokussiert und auf den Punkt.
+                        </div>
+                    </div>
+                </div>
+                <!-- Mehrtägige Begleitung -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <div class="accordion-header-left">
+                            <span class="accordion-tag">Intensiv</span>
+                            <h3>Mehrtägige Begleitung</h3>
+                        </div>
+                        <span class="accordion-price">Auf Anfrage</span>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            2-3 Tage für größere Entscheidungen oder Übergangsphasen. Intensive Begleitung wenn ein einzelner Tag nicht reicht. Für Veränderungen die Tiefe brauchen.
+                        </div>
+                    </div>
+                </div>
+                <!-- Themenwoche Lesachtal -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <div class="accordion-header-left">
+                            <span class="accordion-tag">Gruppe</span>
+                            <h3>Themenwoche Lesachtal</h3>
+                        </div>
+                        <span class="accordion-price">ab 1.350 EUR/Person</span>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-inner">
+                            5 Tage Kulinarik &amp; Slow Living mit Iris Kurzweil. Max. 10 Personen, Alpenhotel Wanderniki. Wandern, echtes Essen, Entschleunigung, echter Austausch. Für Menschen die mehr suchen als Urlaub.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KOOPERATIONEN ===== -->
+    <section class="coop-section" id="coop">
+        <div class="container">
+            <span class="section-label fade-in">Kooperationen</span>
+            <h2 class="fade-in">Gemeinsam stärker.</h2>
+            <div class="coop-grid">
+                <div class="coop-card fade-in">
+                    <h3>Die Glückssteiger</h3>
+                    <p>Premium Executive Reset. 4-5 Tage, max. 8 Personen. Gemeinsam mit Christian Kunert (Sportwissenschaftler) und Dr. Katrin Hofmeister (Ärztin/HRV-Spezialistin).</p>
+                    <span class="coop-meta">ab 2.490 EUR/Person</span>
+                </div>
+                <div class="coop-card fade-in">
+                    <img src="images/lesachtal.jpg" alt="Lesachtal — das ursprünglichste Tal der Alpen" loading="lazy">
+                    <h3>Alpinkulinarik Lesachtal</h3>
+                    <p>Gemeinsames Projekt mit Iris Kurzweil. Kulinarik, Natur und echte Begegnungen im ursprünglichsten Tal der Alpen.</p>
+                    <span class="coop-meta">Weitere Infos folgen</span>
+                </div>
+                <div class="coop-card fade-in">
+                    <img src="images/iris.jpg" alt="Iris Kurzweil — Bergwanderführerin" loading="lazy">
+                    <h3>Iris Kurzweil</h3>
+                    <p>Bergwanderführerin aus Kärnten und Kooperationspartnerin für gemeinsame Projekte und Themenwochen.</p>
+                    <span class="coop-meta">iris-bergwandertouren.de</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <span class="section-label fade-in">Häufige Fragen</span>
+            <h2 class="fade-in">Gut zu wissen.</h2>
+            <div class="faq-list fade-in">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Für wen sind deine Angebote?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Für Unternehmer, Gründer und Führungskräfte die bereit sind wirklich hinzuschauen. Für alle die den nächsten Schritt gehen wollen, sich verändern möchten — oder die spüren: so kann es nicht weitergehen.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Ich bin Gründer — ist das auch was für mich?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Gerade dann. Viele Gründer machen sechsstellige Umsätze und sind trotzdem am Limit. Die Fragen sind oft dieselben — nur traut sich keiner sie laut zu stellen. Bei mir darfst du.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Muss ich bergerfahren sein?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nein. Die Touren sind so gewählt dass sie zu dir passen — nicht umgekehrt.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Was passiert beim Erstgespräch?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Wir reden. 30 Minuten, kostenlos. Ich höre zu. Du entscheidest.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Wo finden die Touren statt?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>In und um Reit im Winkl, Chiemgau, Berchtesgadener Land. Je nach Format.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KONTAKT ===== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <span class="section-label">Kontakt</span>
+                    <h2>Bereit für ein Gespräch?</h2>
+                    <p>Kein Verkaufsgespräch. Keine Verpflichtung. Ich melde mich in der Regel innerhalb von 24 Stunden.</p>
+                    <a href="mailto:kontakt@klarheit-am-berg.de" class="contact-email">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        kontakt@klarheit-am-berg.de
+                    </a>
+                    <div class="contact-trust">
+                        <span class="cert-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Business-Coach IHK
+                        </span>
+                        <span class="cert-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Staatl. gepr. Bergwanderführer
+                        </span>
+                        <span class="cert-badge">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Haftpflichtversichert
+                        </span>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <p class="ohnehonig">
+                        <label>Nicht ausfüllen: <input name="bot-field"></label>
+                    </p>
+                    <input type="hidden" name="form-name" value="kontakt">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Dein Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required placeholder="Deine E-Mail-Adresse">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" required placeholder="Was beschäftigt dich?"></textarea>
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">Ich habe die Datenschutzerklärung gelesen und bin mit der Verarbeitung meiner Daten einverstanden.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Nachricht senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo">Klarheit <span>am Berg</span></span>
+                <ul class="footer-links">
+                    <li><a href="#impressum">Impressum</a></li>
+                    <li><a href="#datenschutz">Datenschutz</a></li>
+                </ul>
+            </div>
+            <p class="footer-copy">&copy; 2026 André Arndt — Klarheit am Berg. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all items in the same accordion
+                item.parentElement.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animations (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
