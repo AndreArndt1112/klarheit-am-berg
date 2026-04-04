@@ -234,7 +234,7 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(135deg, rgba(30, 61, 42, 0.82) 0%, rgba(45, 90, 61, 0.7) 40%, rgba(74, 124, 92, 0.65) 100%),
+                linear-gradient(135deg, rgba(30, 61, 42, 0.55) 0%, rgba(45, 90, 61, 0.45) 40%, rgba(74, 124, 92, 0.4) 100%),
                 url('images/schneeschuh.jpg') center/cover no-repeat;
             z-index: 0;
         }
@@ -1443,6 +1443,9 @@
                         <label for="privacy">Ich habe die Datenschutzerklärung gelesen und bin mit der Verarbeitung meiner Daten einverstanden.</label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit">Nachricht senden</button>
+                    <div class="form-success" style="display:none; margin-top:1.5rem; padding:1.5rem; background:var(--green); color:white; border-radius:var(--radius); text-align:center; font-size:1.1rem;">
+                        Vielen Dank! Deine Nachricht wurde erfolgreich gesendet. Ich melde mich in der Regel innerhalb von 24 Stunden.
+                    </div>
                 </form>
             </div>
         </div>
@@ -1534,6 +1537,35 @@
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // Kontaktformular AJAX
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.btn-submit');
+            btn.textContent = 'Wird gesendet...';
+            btn.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(contactForm)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    contactForm.querySelector('.form-success').style.display = 'block';
+                    contactForm.reset();
+                    btn.textContent = 'Nachricht gesendet!';
+                } else {
+                    btn.textContent = 'Fehler — bitte erneut versuchen';
+                    btn.disabled = false;
+                }
+            })
+            .catch(() => {
+                btn.textContent = 'Fehler — bitte erneut versuchen';
+                btn.disabled = false;
+            });
         });
     </script>
 </body>
