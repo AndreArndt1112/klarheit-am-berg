@@ -676,6 +676,9 @@
             padding: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 3px solid var(--green);
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .coop-card:hover {
@@ -1315,23 +1318,23 @@
             <span class="section-label fade-in">Kooperationen</span>
             <h2 class="fade-in">Gemeinsam stärker.</h2>
             <div class="coop-grid">
-                <div class="coop-card fade-in">
+                <a href="https://www.die-glueckssteiger.de" target="_blank" rel="noopener" class="coop-card fade-in">
                     <h3>Die Glückssteiger</h3>
                     <p>Premium Executive Reset. 4-5 Tage, max. 8 Personen. Gemeinsam mit Christian Kunert (Sportwissenschaftler) und Dr. Katrin Hofmeister (Ärztin/HRV-Spezialistin).</p>
-                    <span class="coop-meta">ab 2.490 EUR/Person</span>
-                </div>
+                    <span class="coop-meta">ab 2.490 EUR/Person → Website besuchen</span>
+                </a>
                 <div class="coop-card fade-in">
                     <img src="images/lesachtal.jpg" alt="Lesachtal — das ursprünglichste Tal der Alpen" loading="lazy">
                     <h3>Alpinkulinarik Lesachtal</h3>
                     <p>Gemeinsames Projekt mit Iris Kurzweil. Kulinarik, Natur und echte Begegnungen im ursprünglichsten Tal der Alpen.</p>
                     <span class="coop-meta">Weitere Infos folgen</span>
                 </div>
-                <div class="coop-card fade-in">
+                <a href="https://www.iris-bergwandertouren.de" target="_blank" rel="noopener" class="coop-card fade-in">
                     <img src="images/iris.jpg" alt="Iris Kurzweil — Bergwanderführerin" loading="lazy">
                     <h3>Iris Kurzweil</h3>
                     <p>Bergwanderführerin aus Kärnten und Kooperationspartnerin für gemeinsame Projekte und Themenwochen.</p>
-                    <span class="coop-meta">iris-bergwandertouren.de</span>
-                </div>
+                    <span class="coop-meta">iris-bergwandertouren.de → Website besuchen</span>
+                </a>
             </div>
         </div>
     </section>
@@ -1418,11 +1421,11 @@
                         </span>
                     </div>
                 </div>
-                <form class="contact-form fade-in" action="https://formsubmit.co/kontakt@klarheit-am-berg.de" method="POST">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_subject" value="Neue Nachricht von klarheit-am-berg.de">
-                    <input type="hidden" name="_next" value="https://klarheit-am-berg.de#kontakt">
-                    <input type="hidden" name="_template" value="table">
+                <form class="contact-form fade-in" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f470b3c5-7eb9-41c0-9d53-d98e8149bf43">
+                    <input type="hidden" name="subject" value="Neue Nachricht von klarheit-am-berg.de">
+                    <input type="hidden" name="redirect" value="https://klarheit-am-berg.de#kontakt">
+                    <input type="checkbox" name="botcheck" style="display:none">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Dein Name">
