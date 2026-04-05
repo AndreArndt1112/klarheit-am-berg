@@ -963,6 +963,67 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
+        /* ===== LEGAL MODALS ===== */
+        .legal-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .legal-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .legal-modal-content {
+            background: var(--white);
+            max-width: 720px;
+            width: 100%;
+            border-radius: var(--radius);
+            padding: 3rem;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .legal-modal-content h2 {
+            color: var(--green);
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-modal-content h3 {
+            color: var(--green-dark);
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1rem;
+        }
+
+        .legal-modal-content p {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-modal-content a {
+            color: var(--green);
+        }
+
+        .legal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text);
+            line-height: 1;
+        }
+
         /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
@@ -1472,6 +1533,67 @@
         </div>
     </section>
 
+    <!-- ===== IMPRESSUM MODAL ===== -->
+    <div class="legal-modal" id="impressum">
+        <div class="legal-modal-content">
+            <button class="legal-close">&times;</button>
+            <h2>Impressum</h2>
+            <h3>Angaben gemäß § 5 TMG</h3>
+            <p>André Arndt<br>
+            Klarheit am Berg<br>
+            Loferaustraße 8<br>
+            83242 Reit im Winkl<br>
+            Deutschland</p>
+
+            <h3>Kontakt</h3>
+            <p>Telefon: +49 171 2244458<br>
+            E-Mail: kontakt@klarheit-am-berg.de</p>
+
+            <h3>Berufsbezeichnungen</h3>
+            <p>Staatlich geprüfter Bergwanderführer<br>
+            Business-Coach IHK</p>
+
+            <h3>Streitschlichtung</h3>
+            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+            <h3>Haftung für Inhalte</h3>
+            <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+            <h3>Haftung für Links</h3>
+            <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+        </div>
+    </div>
+
+    <!-- ===== DATENSCHUTZ MODAL ===== -->
+    <div class="legal-modal" id="datenschutz">
+        <div class="legal-modal-content">
+            <button class="legal-close">&times;</button>
+            <h2>Datenschutzerklärung</h2>
+
+            <h3>1. Verantwortlicher</h3>
+            <p>André Arndt<br>
+            Loferaustraße 8<br>
+            83242 Reit im Winkl<br>
+            E-Mail: kontakt@klarheit-am-berg.de<br>
+            Telefon: +49 171 2244458</p>
+
+            <h3>2. Erhebung und Speicherung personenbezogener Daten</h3>
+            <p>Beim Besuch der Website werden automatisch Informationen an den Server übermittelt: IP-Adresse, Datum und Uhrzeit der Anfrage, Zeitzonendifferenz zur Greenwich Mean Time (GMT), Inhalt der Anforderung, Zugriffsstatus/HTTP-Statuscode, jeweils übertragene Datenmenge, Referrer URL, Browser, Betriebssystem und dessen Oberfläche. Diese Daten werden durch GitHub Pages als Hosting-Anbieter verarbeitet.</p>
+
+            <h3>3. Kontaktformular</h3>
+            <p>Bei Nutzung des Kontaktformulars werden die von dir eingegebenen Daten (Name, E-Mail-Adresse, Nachricht) über den Dienst Web3Forms an uns übermittelt. Die Daten werden ausschließlich zur Bearbeitung deiner Anfrage verwendet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
+
+            <h3>4. Google Fonts</h3>
+            <p>Diese Seite nutzt Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf der Seite lädt dein Browser die benötigten Fonts von Google-Servern. Dabei wird deine IP-Adresse an Google übermittelt. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutzerklärung</a>.</p>
+
+            <h3>5. Deine Rechte</h3>
+            <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Wende dich dazu an: kontakt@klarheit-am-berg.de</p>
+
+            <h3>6. Hosting</h3>
+            <p>Diese Website wird bei GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA) gehostet. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Datenschutzerklärung</a>.</p>
+        </div>
+    </div>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
@@ -1488,6 +1610,32 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
+        // Legal modals
+        document.querySelectorAll('a[href="#impressum"], a[href="#datenschutz"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = link.getAttribute('href').substring(1);
+                document.getElementById(id).classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        document.querySelectorAll('.legal-close').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.legal-modal').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.querySelectorAll('.legal-modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
         // Navigation scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
