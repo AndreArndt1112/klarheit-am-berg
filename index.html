@@ -299,10 +299,26 @@
             padding: 4rem 0;
         }
 
-        .hero-content h1,
-        .hero-content p,
-        .hero-content .btn {
-            max-width: 640px;
+        .hero-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .hero-badge-left {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            margin-top: 0.25rem;
+        }
+
+        .hero-text h1,
+        .hero-text p,
+        .hero-text .btn {
+            max-width: 580px;
         }
 
         .hero h1 {
@@ -1175,9 +1191,14 @@
             </svg>
         </div>
         <div class="container hero-content">
-            <h1>Du weißt, wohin du willst.<br>Aber der Kopf lässt dich nicht.</h1>
-            <p>Coaching und Wandern für Menschen am Scheideweg — egal ob Unternehmer, Führungskraft oder Menschen, die Klarheit suchen.</p>
-            <a href="#contact" class="btn btn-primary">Erstgespräch vereinbaren</a>
+            <div class="hero-inner">
+                <img src="images/bergwanderfuehrer-kaernten.jpg" alt="Staatlich geprüfter Bergwanderführer Kärnten" class="hero-badge-left">
+                <div class="hero-text">
+                    <h1>Du weißt, wohin du willst.<br>Aber der Kopf lässt dich nicht.</h1>
+                    <p>Coaching und Wandern für Menschen am Scheideweg — egal ob Unternehmer, Führungskraft oder Menschen, die Klarheit suchen.</p>
+                    <a href="#contact" class="btn btn-primary">Erstgespräch vereinbaren</a>
+                </div>
+            </div>
         </div>
     </section>
 
