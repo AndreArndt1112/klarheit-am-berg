@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alpinkulinarik Lesachtal | Klarheit am Berg</title>
+<meta name="description" content="5 Tage geführtes Genusswandern im Kärntner Lesachtal mit André Arndt und Iris Kurzweil. Natur, Brot und Berggenuss, ab 960 Euro pro Person.">
+<style>
+  :root {
+    --green: #2d5a3d;
+    --green-light: #3a7350;
+    --green-dark: #1e3d2a;
+    --amber: #d4891a;
+    --amber-light: #e09a2e;
+    --cream: #f7f5f2;
+    --cream-dark: #efe9e1;
+    --text: #333333;
+    --text-light: #666666;
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .nav {
+    background: var(--green-dark);
+    padding: 18px 0;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { color: var(--white); font-weight: 700; font-size: 19px; text-decoration: none; }
+  .nav-logo span { color: var(--amber-light); }
+  .nav-links { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  .nav-links a { color: var(--white); text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.9; }
+  .nav-links a:hover { opacity: 1; }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  .breadcrumb {
+    max-width: 900px; margin: 28px auto 0; padding: 0 24px;
+    font-size: 13px; color: var(--text-light);
+  }
+  .breadcrumb a { color: var(--green); text-decoration: none; }
+
+  .hero-block {
+    max-width: 900px; margin: 0 auto; padding: 24px 24px 0;
+  }
+  .hero-block img {
+    width: 100%; height: 360px; object-fit: cover;
+    border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  }
+
+  h1 {
+    font-size: 34px; font-weight: 700; color: var(--green-dark);
+    margin: 36px 0 8px; padding: 0 24px; max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+  .subtitle {
+    color: var(--text-light); font-size: 17px; margin: 0 0 32px;
+    padding: 0 24px; max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+
+  .content { max-width: 760px; margin: 0 auto; padding: 0 24px 64px; }
+  .content p { margin: 0 0 18px; }
+  .content strong { color: var(--green-dark); }
+
+  .facts-box {
+    background: var(--cream); border-radius: var(--radius); padding: 24px 28px;
+    margin: 0 0 28px; box-shadow: var(--shadow);
+  }
+  .facts-box p.label { font-weight: 700; color: var(--green-dark); margin: 0 0 14px; }
+  .facts-box ul { margin: 0; padding-left: 20px; }
+  .facts-box li { margin-bottom: 8px; }
+  .facts-box li:last-child { margin-bottom: 0; }
+
+  .tagline {
+    font-weight: 600; font-size: 19px; color: var(--amber); margin: 0 0 28px;
+  }
+
+  .cta-button {
+    display: inline-block; background: var(--green); color: var(--white);
+    text-decoration: none; font-size: 15px; font-weight: 600;
+    padding: 14px 28px; border-radius: var(--radius); box-shadow: var(--shadow);
+  }
+  .cta-button:hover { background: var(--green-light); }
+
+  .footer {
+    background: var(--cream-dark); padding: 32px 0; margin-top: 40px;
+  }
+  .footer-inner {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-logo { font-weight: 700; color: var(--green-dark); }
+  .footer-logo span { color: var(--amber); }
+  .footer-links { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+  .footer-links a { color: var(--text-light); text-decoration: none; font-size: 13px; }
+  .footer-copy { font-size: 13px; color: var(--text-light); margin: 0; }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Klarheit <span>am Berg</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">Über mich</a></li>
+        <li><a href="index.html#offers">Angebote</a></li>
+        <li><a href="index.html#coop">Kooperationen</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="index.html#coop">← Zurück zu Kooperationen</a></p>
+
+  <div class="hero-block">
+    <img src="images/lesachtal.jpg" alt="Lesachtal — das ursprünglichste Tal der Alpen" loading="lazy">
+  </div>
+
+  <h1>Alpinkulinarik Lesachtal. Eine Woche, die bleibt.</h1>
+  <p class="subtitle">5 Tage geführtes Genusswandern im Kärntner Lesachtal, gemeinsam mit Iris Kurzweil.</p>
+
+  <div class="content">
+
+    <p>
+      Manche Wege geht man nicht allein. Die Lesachtal-Woche mache ich gemeinsam mit
+      <strong>Iris Kurzweil</strong>, Bergwanderführerin und Partnerin für dieses Projekt.
+    </p>
+
+    <p>
+      Fünf Tage im naturbelassensten Tal Europas. Kein Seminarraum, kein Flipchart, nur Berge,
+      Brot und der Weg. Wir wandern zu Almen, Mühlen und Gipfeln, lernen Kräuter kennen,
+      verkosten Speck und backen am Ende gemeinsam Brot, nach Lesachtaler Tradition,
+      immaterielles UNESCO-Kulturerbe.
+    </p>
+
+    <p>
+      Für dich heißt das: Natur, Bewegung und echte Genusskultur statt durchgetaktetem Programm.
+      Kleine Gruppe, maximal 12 Personen, zwei zertifizierte Bergwanderführer:innen an deiner Seite.
+    </p>
+
+    <div class="facts-box">
+      <p class="label">Im Überblick</p>
+      <ul>
+        <li>11. bis 15. Oktober, 5 Tage / 4 Nächte</li>
+        <li>Basecamp: Alpenhotel Wanderniki, Obergail</li>
+        <li>Leitung: Iris Kurzweil und ich, gleichberechtigt</li>
+        <li>ab 960 Euro pro Person</li>
+      </ul>
+    </div>
+
+    <p class="tagline">Raus aus dem Alltag. Rein ins Lesachtal.</p>
+
+    <a href="index.html#contact" class="cta-button">Jetzt Platz sichern</a>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Klarheit <span>am Berg</span></span>
+        <ul class="footer-links">
+          <li><a href="index.html#impressum">Impressum</a></li>
+          <li><a href="index.html#datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+      <p class="footer-copy">&copy; 2026 André Arndt — Klarheit am Berg. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
