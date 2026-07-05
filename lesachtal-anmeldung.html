@@ -349,9 +349,10 @@
     <h3>Platz anfragen</h3>
     <p class="form-sub">Kostenlos und unverbindlich. Ich melde mich persönlich.</p>
 
-    <form id="anmelde-form" action="https://formspree.io/f/andrearndt1@gmx.de" method="POST">
+    <form id="anmelde-form" action="https://formsubmit.co/andrearndt1@gmx.de" method="POST">
       <input type="hidden" name="_subject" value="Lesachtal-Woche: Neue Anfrage">
-      <input type="hidden" name="_next" value="">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://klarheit-am-berg.de/lesachtal-anmeldung.html?danke=1">
 
       <div class="field-row">
         <div class="field">
@@ -413,34 +414,11 @@
 </footer>
 
 <script>
-  const form = document.getElementById('anmelde-form');
-  const success = document.getElementById('success');
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const btn = form.querySelector('.submit-btn');
-    btn.textContent = 'Wird gesendet...';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        btn.textContent = 'Fehler. Bitte nochmal versuchen.';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Fehler. Bitte nochmal versuchen.';
-      btn.disabled = false;
-    }
-  });
+  // Erfolgsmeldung anzeigen wenn nach dem Absenden zurückgeleitet wurde
+  if (new URLSearchParams(window.location.search).get('danke') === '1') {
+    document.getElementById('anmelde-form').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }
 </script>
 
 </body>
