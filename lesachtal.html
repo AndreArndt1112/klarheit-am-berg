@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alpinkulinarik Lesachtal | Klarheit am Berg</title>
-<meta name="description" content="5 Tage geführtes Genusswandern im Kärntner Lesachtal mit André Arndt und Iris Kurzweil. Natur, Brot und Berggenuss, ab 960 Euro pro Person.">
+<meta name="description" content="5 Tage geführtes Genusswandern im Kärntner Lesachtal mit André Arndt und Iris Kurzweil. Natur, Brot und Berggenuss, ab 990 Euro pro Person.">
 <style>
   :root {
     --green: #2d5a3d;
@@ -88,6 +88,38 @@
     font-weight: 600; font-size: 19px; color: var(--amber); margin: 0 0 28px;
   }
 
+  .routes-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 28px;
+  }
+  @media (max-width: 560px) { .routes-grid { grid-template-columns: 1fr; } }
+  .route-card {
+    background: var(--cream); border-radius: var(--radius); padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .route-header {
+    display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;
+  }
+  .route-num {
+    background: var(--green); color: var(--white); font-weight: 700;
+    font-size: 13px; width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .route-header > div { flex: 1; }
+  .route-header strong { display: block; font-size: 15px; color: var(--green-dark); }
+  .route-alt { font-size: 12px; color: var(--text-light); }
+  .route-diff {
+    font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px;
+    white-space: nowrap; margin-top: 3px;
+  }
+  .diff-easy { background: #d4edda; color: #1a5c2a; }
+  .diff-mid  { background: #fff3cd; color: #7a5000; }
+  .diff-hard { background: #f8d7da; color: #7a1a1a; }
+  .route-stats {
+    display: flex; gap: 14px; font-size: 13px; color: var(--text-light);
+    border-top: 1px solid var(--cream-dark); padding-top: 10px;
+  }
+
   .cta-button {
     display: inline-block; background: var(--green); color: var(--white);
     text-decoration: none; font-size: 15px; font-weight: 600;
@@ -153,6 +185,69 @@
       Kleine Gruppe, maximal 12 Personen, zwei zertifizierte Bergwanderführer:innen an deiner Seite.
     </p>
 
+    <div class="routes-grid">
+      <div class="route-card">
+        <div class="route-header">
+          <span class="route-num">1</span>
+          <div>
+            <strong>Obergailer See</strong>
+            <span class="route-alt">1.600 m</span>
+          </div>
+          <span class="route-diff diff-easy">Leicht</span>
+        </div>
+        <div class="route-stats">
+          <span>↑↓ 400 Hm</span>
+          <span>ca. 10 km</span>
+          <span>ca. 3½ Std.</span>
+        </div>
+      </div>
+      <div class="route-card">
+        <div class="route-header">
+          <span class="route-num">2</span>
+          <div>
+            <strong>Samalm</strong>
+            <span class="route-alt">1.988 m</span>
+          </div>
+          <span class="route-diff diff-mid">Mittel</span>
+        </div>
+        <div class="route-stats">
+          <span>↑↓ 800 Hm</span>
+          <span>ca. 10 km</span>
+          <span>ca. 5 Std.</span>
+        </div>
+      </div>
+      <div class="route-card">
+        <div class="route-header">
+          <span class="route-num">3</span>
+          <div>
+            <strong>Gamskofel</strong>
+            <span class="route-alt">2.122 m</span>
+          </div>
+          <span class="route-diff diff-hard">Anspruchsvoll</span>
+        </div>
+        <div class="route-stats">
+          <span>↑↓ 922 Hm</span>
+          <span>ca. 11 km</span>
+          <span>ca. 5½ Std.</span>
+        </div>
+      </div>
+      <div class="route-card">
+        <div class="route-header">
+          <span class="route-num">4</span>
+          <div>
+            <strong>Schwalbenkofel</strong>
+            <span class="route-alt">2.159 m</span>
+          </div>
+          <span class="route-diff diff-hard">Anspruchsvoll</span>
+        </div>
+        <div class="route-stats">
+          <span>↑↓ 1.000 Hm</span>
+          <span>ca. 11 km</span>
+          <span>ca. 5½ Std.</span>
+        </div>
+      </div>
+    </div>
+
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 28px;">
       <figure style="margin:0;">
         <img src="images/muehlenmuseum.jpg" alt="Historisches Mühlenmuseum im Lesachtal mit Wasserrad" loading="lazy"
@@ -176,7 +271,7 @@
         <li>11. bis 15. Oktober, 5 Tage / 4 Nächte</li>
         <li>Basecamp: Alpenhotel Wanderniki, Obergail</li>
         <li>Leitung: Iris Kurzweil und ich</li>
-        <li>ab 960 Euro pro Person</li>
+        <li>ab 990 Euro pro Person</li>
       </ul>
     </div>
 
