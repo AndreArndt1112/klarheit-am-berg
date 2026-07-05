@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jetzt anmelden – Alpinkulinarik Lesachtal | Klarheit am Berg</title>
+<meta name="description" content="Jetzt Platz sichern für die Alpinkulinarik-Woche im Lesachtal, 11.–15. Oktober 2026. 5 Tage geführtes Genusswandern mit André Arndt und Iris Kurzweil.">
+<style>
+  :root {
+    --green: #2E3923;
+    --green-mid: #3a4d2e;
+    --green-light: #4a6040;
+    --amber: #C79A4E;
+    --amber-dark: #B5812F;
+    --cream: #F3EBDA;
+    --cream-dark: #e8ddc8;
+    --text: #333;
+    --text-light: #666;
+    --white: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia', serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--green);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { color: var(--white); font-size: 17px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; }
+  .nav-logo span { color: var(--amber); }
+  .nav-back { color: var(--cream); font-size: 13px; text-decoration: none; opacity: 0.8; font-family: sans-serif; }
+  .nav-back:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(46,57,35,0.55) 100%);
+  }
+  .hero-text {
+    position: absolute;
+    bottom: 36px; left: 0; right: 0;
+    text-align: center;
+    color: var(--white);
+    padding: 0 24px;
+  }
+  .hero-eyebrow {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .hero-sub {
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+
+  /* MAIN LAYOUT */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 680px) {
+    .page { grid-template-columns: 1fr; gap: 32px; }
+    .hero { height: 300px; }
+  }
+
+  /* INFO COLUMN */
+  .info h2 {
+    font-size: 22px;
+    color: var(--green);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .info p {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+
+  .facts {
+    background: var(--green);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+  }
+  .facts-title {
+    font-family: sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .fact-row:last-child { border-bottom: none; }
+  .fact-label { opacity: 0.7; }
+  .fact-value { font-weight: 600; color: var(--amber); }
+
+  .guarantee {
+    background: var(--cream-dark);
+    border-left: 3px solid var(--amber-dark);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  /* FORM COLUMN */
+  .form-wrap {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 40px rgba(46,57,35,0.12);
+  }
+  .form-wrap h3 {
+    font-size: 20px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .form-sub {
+    font-family: sans-serif;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 24px;
+  }
+
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: var(--green);
+    background: var(--white);
+  }
+  .field textarea { resize: vertical; min-height: 90px; }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 420px) { .field-row { grid-template-columns: 1fr; } }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+    margin-top: 6px;
+  }
+  .submit-btn:hover { background: var(--green-light); }
+
+  .privacy-note {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+
+  /* SUCCESS */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .success-msg .check {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  .success-msg h3 {
+    font-size: 22px;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .success-msg p {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--green);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 24px;
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+  footer a { color: var(--amber); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Klarheit <span>am Berg</span></a>
+  <a href="lesachtal.html" class="nav-back">← Zur Programm-Übersicht</a>
+</nav>
+
+<div class="hero">
+  <img src="images/terrasse-wanderniki.jpg" alt="Terrasse Alpenhotel Wanderniki mit Blick ins Lesachtal">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">11.–15. Oktober 2026 · Lesachtal</p>
+    <h1 class="hero-title">Gipfel und Genuss.</h1>
+    <p class="hero-sub">Jetzt Platz sichern. Maximal 12 Personen.</p>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="info">
+    <h2>Eine Woche, die bleibt.</h2>
+    <p>
+      Fünf Tage lang wandern wir zu Almen, Mühlen und Gipfeln im Kärntner Lesachtal.
+      Du mahlst Mehl in einer der letzten alten Wassermühlen, lernst, was am Wegrand wächst,
+      und am Ende backen wir gemeinsam Brot nach Lesachtaler Tradition.
+    </p>
+    <p>
+      Kleine Gruppe. Zwei zertifizierte Bergwanderführer:innen. Echte Genusskultur
+      statt durchgetaktetem Programm.
+    </p>
+
+    <div class="facts">
+      <p class="facts-title">Im Überblick</p>
+      <div class="fact-row">
+        <span class="fact-label">Zeitraum</span>
+        <span class="fact-value">11.–15. Okt. 2026</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Unterkunft</span>
+        <span class="fact-value">Alpenhotel Wanderniki</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Gruppengröße</span>
+        <span class="fact-value">max. 12 Personen</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Leitung</span>
+        <span class="fact-value">André Arndt & Iris Kurzweil</span>
+      </div>
+      <div class="fact-row">
+        <span class="fact-label">Preis</span>
+        <span class="fact-value">ab 990 EUR / Person</span>
+      </div>
+    </div>
+
+    <div class="guarantee">
+      Nach deiner Anmeldung melde ich mich innerhalb von 48 Stunden persönlich bei dir.
+      Kein Verkaufsgespräch. Nur kurz schauen, ob die Woche zu dir passt.
+    </div>
+  </div>
+
+  <div class="form-wrap" id="form-container">
+    <h3>Platz anfragen</h3>
+    <p class="form-sub">Kostenlos und unverbindlich. Ich melde mich persönlich.</p>
+
+    <form id="anmelde-form" action="https://formspree.io/f/andrearndt1@gmx.de" method="POST">
+      <input type="hidden" name="_subject" value="Lesachtal-Woche: Neue Anfrage">
+      <input type="hidden" name="_next" value="">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" placeholder="Max" required>
+        </div>
+        <div class="field">
+          <label for="nachname">Nachname</label>
+          <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+      </div>
+
+      <div class="field">
+        <label for="telefon">Telefon (optional)</label>
+        <input type="tel" id="telefon" name="telefon" placeholder="+49 ...">
+      </div>
+
+      <div class="field">
+        <label for="personen">Wie viele Personen?</label>
+        <select id="personen" name="personen">
+          <option value="1">1 Person</option>
+          <option value="2">2 Personen</option>
+          <option value="3">3 Personen</option>
+          <option value="mehr">4 oder mehr</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="nachricht">Kurze Nachricht (optional)</label>
+        <textarea id="nachricht" name="nachricht" placeholder="Fragen, Wünsche, besondere Anforderungen..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Jetzt anfragen</button>
+      <p class="privacy-note">
+        Deine Daten werden nur für die Bearbeitung deiner Anfrage verwendet
+        und nicht weitergegeben. <a href="index.html#datenschutz" style="color:var(--green);">Datenschutz</a>
+      </p>
+    </form>
+
+    <div class="success-msg" id="success">
+      <div class="check">&#10003;</div>
+      <h3>Danke, deine Anfrage ist da.</h3>
+      <p>Ich melde mich in den nächsten 48 Stunden persönlich bei dir.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 André Arndt &mdash; Klarheit am Berg &nbsp;|&nbsp;
+     <a href="index.html#impressum">Impressum</a> &nbsp;|&nbsp;
+     <a href="index.html#datenschutz">Datenschutz</a>
+  </p>
+</footer>
+
+<script>
+  const form = document.getElementById('anmelde-form');
+  const success = document.getElementById('success');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const btn = form.querySelector('.submit-btn');
+    btn.textContent = 'Wird gesendet...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.textContent = 'Fehler. Bitte nochmal versuchen.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Fehler. Bitte nochmal versuchen.';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
