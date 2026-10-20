@@ -1300,7 +1300,32 @@
                 font-size: 1.5rem;
             }
         }
-    </style>
+    
+/* ===== VIDEOS ===== */
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 2.5rem; }
+.video-karte { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.video-buehne { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #1e3d2a; }
+.video-buehne.quer { aspect-ratio: 16 / 9; }
+.video-buehne img, .video-buehne video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-start {
+  position: absolute; inset: 0; border: 0; padding: 0; cursor: pointer;
+  background: transparent; display: flex; align-items: center; justify-content: center;
+}
+.video-start::after {
+  content: ""; width: 68px; height: 68px; border-radius: 50%;
+  background: rgba(255,255,255,0.92) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232d5a3d'><path d='M8 5v14l11-7z'/></svg>") no-repeat center / 32px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35); transition: transform .25s ease;
+}
+.video-start:hover::after { transform: scale(1.1); }
+.video-start:focus-visible { outline: 3px solid #d4891a; outline-offset: -3px; }
+.video-dauer {
+  position: absolute; right: 10px; bottom: 10px; background: rgba(0,0,0,0.65); color: #fff;
+  font-size: 12px; padding: 2px 8px; border-radius: 10px; pointer-events: none;
+}
+.video-titel { padding: 1rem 1.1rem 1.2rem; font-weight: 600; color: #1e3d2a; line-height: 1.45; }
+@media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .video-grid { grid-template-columns: 1fr; gap: 16px; } }
+</style>
 </head>
 <body>
 
@@ -1549,6 +1574,9 @@
     <div class="panorama-divider">
         <img src="images/winter_see.jpg" alt="Winterlandschaft bei Reit im Winkl" loading="lazy">
     </div>
+
+    <!-- VIDEOS-ANFANG (wird automatisch erzeugt) -->
+<!-- VIDEOS-ENDE -->
 
     <!-- ===== ANGEBOTE ===== -->
     <section class="offers-section" id="offers">
