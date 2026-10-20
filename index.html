@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klarheit am Berg | André Arndt – Bergwanderführer & Business-Coach in Reit im Winkl</title>
-    <meta name="description" content="Klarheits-Tage am Berg für Führungskräfte, Unternehmer, Gründer und Menschen die den nächsten Schritt gehen wollen — mit André Arndt aus Reit im Winkl. Staatlich geprüfter Bergwanderführer und Business-Coach IHK.">
+    <title>Klarheit am Berg | André Arndt – Business-Coach & Bergwanderführer in Reit im Winkl</title>
+    <meta name="description" content="Klarheit am Berg: Coaching für persönliche und berufliche Klarheit und verantwortungsvoll geführte Bergerlebnisse in kleinen Gruppen — mit André Arndt aus Reit im Winkl. Business-Coach IHK und staatlich geprüfter Bergwanderführer.">
 
     <!-- Open Graph / WhatsApp / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://klarheit-am-berg.de/">
-    <meta property="og:title" content="Klarheit am Berg — André Arndt">
-    <meta property="og:description" content="Coaching & Wandern für Unternehmer, Gründer und Führungskräfte. Weil Klarheit nicht im Büro entsteht.">
+    <meta property="og:title" content="Klarheit am Berg — Menschen begleiten. Wege eröffnen.">
+    <meta property="og:description" content="Coaching &amp; Klarheit und Wandern &amp; Erleben — zwei Wege, beide mit Begleitung. André Arndt, Reit im Winkl.">
     <meta property="og:image" content="https://klarheit-am-berg.de/images/schneeschuh.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Klarheit am Berg — André Arndt">
-    <meta name="twitter:description" content="Coaching & Wandern für Unternehmer, Gründer und Führungskräfte. Weil Klarheit nicht im Büro entsteht.">
+    <meta name="twitter:title" content="Klarheit am Berg — Menschen begleiten. Wege eröffnen.">
+    <meta name="twitter:description" content="Coaching &amp; Klarheit und Wandern &amp; Erleben — zwei Wege, beide mit Begleitung. André Arndt, Reit im Winkl.">
     <meta name="twitter:image" content="https://klarheit-am-berg.de/images/schneeschuh.jpg">
 
     <style>
@@ -369,6 +369,19 @@
             background: var(--green);
             color: var(--white);
             transform: translateY(-2px);
+        }
+
+        .hero .btn-outline {
+            background: rgba(255,255,255,0.12);
+            color: var(--white);
+            border-color: rgba(255,255,255,0.85);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero .btn-outline:hover {
+            background: var(--white);
+            color: var(--green-dark);
+            border-color: var(--white);
         }
 
         /* ===== KENNST DU DAS ===== */
@@ -1070,6 +1083,142 @@
         }
 
         /* ===== RESPONSIVE ===== */
+        /* ===== ZWEI WEGE ===== */
+        .wege-section {
+            background: var(--cream-dark);
+        }
+        .wege-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .wege-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--green);
+            display: flex;
+            flex-direction: column;
+        }
+        .wege-card:nth-child(2) {
+            border-top-color: var(--amber);
+        }
+        .wege-card h3 {
+            color: var(--green);
+            margin-bottom: 0.85rem;
+        }
+        .wege-card:nth-child(2) h3 {
+            color: var(--amber);
+        }
+        .wege-card p {
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+        .wege-card .btn {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        /* ===== HINWEIS-KASTEN ===== */
+        .hinweis {
+            background: var(--white);
+            border-left: 4px solid var(--amber);
+            border-radius: 10px;
+            padding: 1.1rem 1.35rem;
+            margin-top: 2rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== FOTOREIHE ===== */
+        .fotoreihe {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 1.5rem;
+        }
+        .fotoreihe a {
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .fotoreihe img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+        .fotoreihe a:hover img { transform: scale(1.06); }
+        .fotoreihe-text {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        .fotoreihe-text a { color: var(--green); font-weight: 600; }
+        @media (max-width: 560px) {
+            .fotoreihe { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        }
+
+        /* ===== LESACHTAL-TEASER ===== */
+        .teaser-section {
+            background: var(--cream);
+        }
+        .teaser-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 2.5rem;
+        }
+        .teaser-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+        }
+        .teaser-text {
+            padding: 2.5rem;
+        }
+        .teaser-text h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+        .teaser-text p {
+            color: var(--text-light);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .teaser-badge {
+            display: inline-block;
+            background: var(--cream-dark);
+            color: var(--green-dark);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .wege-grid { grid-template-columns: 1fr; }
+            .teaser-card { grid-template-columns: 1fr; }
+            .teaser-card img { min-height: 220px; }
+            .teaser-text { padding: 1.75rem; }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1160,9 +1309,10 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">Klarheit <span>am Berg</span></a>
             <ul class="nav-links">
+                <li><a href="#wege">Zwei Wege</a></li>
                 <li><a href="#about">Über mich</a></li>
                 <li><a href="#offers">Angebote</a></li>
-                <li><a href="#coop">Kooperationen</a></li>
+                <li><a href="#lesachtal">Lesachtal</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
@@ -1172,8 +1322,10 @@
             </button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
+            <a href="#wege">Zwei Wege</a>
             <a href="#about">Über mich</a>
             <a href="#offers">Angebote</a>
+            <a href="#lesachtal">Lesachtal</a>
             <a href="#coop">Kooperationen</a>
             <a href="#contact">Kontakt</a>
         </div>
@@ -1191,9 +1343,12 @@
         <div class="container hero-content">
             <div class="hero-inner">
                 <div class="hero-text">
-                    <h1>Du weißt, wohin du willst.<br>Aber der Kopf lässt dich nicht.</h1>
-                    <p>Coaching und Wandern für Menschen am Scheideweg — egal ob Unternehmer, Führungskraft oder Menschen, die Klarheit suchen.</p>
-                    <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;display:inline-block;">Erstgespräch vereinbaren</a>
+                    <h1>Menschen begleiten.<br>Wege eröffnen.</h1>
+                    <p>Manchmal braucht es Abstand vom Alltag, Bewegung und ein gutes Gespräch, um die eigene Situation neu zu betrachten. Manchmal braucht es einfach einen besonderen Tag draußen. Beides hat bei Klarheit am Berg seinen Platz.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;">
+                        <a href="#wege" class="btn btn-primary">Coaching entdecken</a>
+                        <a href="#erleben" class="btn btn-outline">Wandererlebnisse entdecken</a>
+                    </div>
                     <a href="https://wa.me/491712244458?text=Hallo%20André%2C%20ich%20interessiere%20mich%20für%20ein%20Erstgespräch." target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:rgba(255,255,255,0.9);margin-top:0.75rem;">
                         <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 2px 8px rgba(37,211,102,0.5);flex-shrink:0;">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.859L.057 23.428a.75.75 0 0 0 .921.921l5.569-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.523-5.188-1.433l-.372-.22-3.862 1.018 1.018-3.862-.22-.372A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -1209,10 +1364,36 @@
         </div>
     </section>
 
+    <!-- ===== ZWEI WEGE ===== -->
+    <section class="wege-section" id="wege">
+        <div class="container">
+            <span class="section-label fade-in">Zwei Wege</span>
+            <h2 class="fade-in">Beides hat seinen Platz.</h2>
+            <p class="fade-in" style="max-width:720px;color:var(--text-light);line-height:1.8;margin-top:1rem;">
+                Ich bin André Arndt — Business-Coach IHK und staatlich geprüfter Bergwanderführer. Ich begleite Menschen mit Erfahrung, Ruhe und einem offenen Ohr: bei wichtigen Fragen genauso wie auf ausgewählten Wegen in den Bergen.
+            </p>
+            <div class="wege-grid">
+                <div class="wege-card fade-in">
+                    <h3>Coaching &amp; Klarheit</h3>
+                    <p>Wenn Fragen im Kreis laufen oder Entscheidungen anstehen, kann ein Perspektivwechsel helfen. Wir nehmen uns Zeit, sortieren Gedanken und entwickeln mögliche nächste Schritte — ohne fertige Antworten vorzugeben.</p>
+                    <a href="#offers" class="btn btn-primary">Coaching-Angebote ansehen</a>
+                </div>
+                <div class="wege-card fade-in" id="erleben">
+                    <h3>Wandern &amp; Erleben</h3>
+                    <p>Geführte Touren, kleine Gruppen und besondere Tage in der Natur. Hier geht es nicht nur um Kilometer, sondern auch um Landschaft, Begegnungen, Sicherheit und Freude am Unterwegssein.</p>
+                    <a href="#lesachtal" class="btn btn-primary">Wanderangebote entdecken</a>
+                </div>
+            </div>
+            <p class="fade-in" style="margin-top:2rem;color:var(--text-light);font-size:0.95rem;">
+                Welcher Bereich sich stärker entwickelt, entscheide ich nicht vorab — sondern danach, wofür Menschen tatsächlich anklopfen.
+            </p>
+        </div>
+    </section>
+
     <!-- ===== KENNST DU DAS ===== -->
     <section class="pain-section" id="pain">
         <div class="container">
-            <span class="section-label fade-in">Kennst du das?</span>
+            <span class="section-label fade-in">Coaching &amp; Klarheit · Kennst du das?</span>
             <h2 class="fade-in">Wenn der Kopf nicht aufhört.</h2>
             <div class="pain-grid">
                 <div class="pain-card fade-in">
@@ -1278,44 +1459,47 @@
     <section class="results-section" id="results">
         <div class="container">
             <span class="section-label fade-in">Was möglich ist</span>
-            <h2 class="fade-in">Nach einem Tag weißt du wieder wohin.</h2>
+            <h2 class="fade-in">Was ein Tag am Berg in Bewegung bringen kann.</h2>
             <div class="results-list">
                 <div class="result-item fade-in">
                     <div class="result-check">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p>Du hast Klarheit über deinen nächsten Schritt</p>
+                    <p>Mehr Klarheit über deinen nächsten Schritt</p>
                 </div>
                 <div class="result-item fade-in">
                     <div class="result-check">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p>Du hast Abstand vom Alltag gewonnen</p>
+                    <p>Abstand vom Alltag und Raum zum Durchatmen</p>
                 </div>
                 <div class="result-item fade-in">
                     <div class="result-check">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p>Du hast eine ehrliche Analyse deiner Situation</p>
+                    <p>Ein ehrlicher Blick auf deine Situation</p>
                 </div>
                 <div class="result-item fade-in">
                     <div class="result-check">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p>Du weißt was du loslassen musst</p>
+                    <p>Ein Gefühl dafür, was du loslassen kannst</p>
                 </div>
                 <div class="result-item fade-in">
                     <div class="result-check">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p>Du gehst mit einem konkreten Plan</p>
+                    <p>Erste konkrete Schritte, die zu dir passen</p>
                 </div>
                 <div class="result-item fade-in">
                     <div class="result-check">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p>Du weißt, dass du nicht allein bist mit deinen Fragen</p>
+                    <p>Die Erfahrung, mit deinen Fragen nicht allein zu sein</p>
                 </div>
+            </div>
+            <div class="hinweis fade-in">
+                Das sind die Ziele, auf die wir gemeinsam hinarbeiten — keine zugesicherten Ergebnisse. Wie viel sich bewegt, hängt von deinem Thema, von dir und auch vom Tag ab. Coaching ist keine Therapie und ersetzt keine medizinische oder psychotherapeutische Behandlung.
             </div>
         </div>
     </section>
@@ -1370,7 +1554,7 @@
     <section class="offers-section" id="offers">
         <div class="container">
             <span class="section-label fade-in">Angebote</span>
-            <h2 class="fade-in">Formate, die wirken.</h2>
+            <h2 class="fade-in">Formate, die zu dir passen.</h2>
             <div class="accordion fade-in">
                 <!-- Klarheits-Tag -->
                 <div class="accordion-item">
@@ -1384,7 +1568,7 @@
                     </button>
                     <div class="accordion-body">
                         <div class="accordion-body-inner">
-                            Ganztag am Berg, 1:1. Wandern + Coaching. Du kommst mit Fragen, du gehst mit Klarheit. Ein Tag, der mehr bewegt als viele Monate im Alltag.
+                            Ganztag am Berg, 1:1. Wandern und Coaching. Du kommst mit deinen Fragen — und wir nehmen uns den ganzen Tag Zeit, sie zu sortieren. Für viele bewegt so ein Tag mehr als Wochen im Alltag.
                         </div>
                     </div>
                 </div>
@@ -1400,7 +1584,7 @@
                     </button>
                     <div class="accordion-body">
                         <div class="accordion-body-inner">
-                            3-4 Stunden, ein Thema, ein Ergebnis. Für Menschen, die wenig Zeit haben, aber viel klären wollen. Fokussiert und auf den Punkt.
+                            3 bis 4 Stunden, ein Thema. Für Menschen, die wenig Zeit haben, aber viel klären wollen. Fokussiert und auf den Punkt.
                         </div>
                     </div>
                 </div>
@@ -1425,19 +1609,53 @@
                     <button class="accordion-header">
                         <div class="accordion-header-left">
                             <span class="accordion-tag">Gruppe</span>
-                            <h3>Themenwoche Lesachtal</h3>
+                            <h3>Themenwoche Lesachtal 2027</h3>
                         </div>
-                        <span class="accordion-price">ab 990 EUR/Person</span>
+                        <span class="accordion-price">Oktober 2027</span>
                         <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="accordion-body">
                         <div class="accordion-body-inner">
-                            Das Lesachtal — jahrhundertelang eines der letzten Selbstversorgertäler Europas, naturbelassen bis heute. Fünf Tage, jede Wanderung ein eigenes Thema. Du mahlst Mehl in einer der letzten alten Wassermühlen, backst daraus mit einer Einheimischen Brot nach UNESCO-Kulturerbe-Tradition — serviert noch am selben Abend. Ein Imker zeigt dir wie Bienen weit mehr liefern als Honig: Propolis, Heilsalben, Lippenbalsam — Naturmedizin aus dem Stock, so wie sie die Menschen hier seit jeher genutzt haben. Eine Kräuterexpertin erklärt dir was direkt neben dem Pfad wächst, wie es schmeckt, wie es heilt. Am Abend kommt zusammen was das Tal hergibt — und du siehst es jetzt mit ganz anderen Augen. Begleitet von Iris Kurzweil und André Arndt — in einer kleinen Gruppe von max. 12 Menschen, die wirklich eintauchen wollen.
+                            Das Lesachtal in Kärnten war jahrhundertelang eines der letzten Selbstversorgertäler Europas und ist bis heute ursprünglich geblieben. 2026 haben wir das Tal zum ersten Mal gemeinsam erlebt: bei Wanderungen zu Almen und Gipfeln, beim Brotbacken nach Lesachtaler Tradition, bei Einblicken in Mühlen, Imkerei und Kräuterwissen und an geselligen Abenden mit regionaler Küche.<br><br>
+                            Für <strong>10. bis 14. Oktober 2027</strong> ist die nächste Lesachtal-Woche vorgesehen. Programm, Begleitung, Preis und Leistungen werden hier veröffentlicht, sobald alles abgestimmt ist. Wer informiert werden möchte, kann sich jetzt unverbindlich melden.
                         </div>
-                        <a href="lesachtal-anmeldung.html" class="btn btn-primary" style="margin-top:1rem;display:inline-block;">Jetzt Platz sichern</a>
+                        <a href="lesachtal.html" class="btn btn-primary" style="margin-top:1rem;display:inline-block;">Rückblick &amp; Ausblick 2027 ansehen</a>
                     </div>
                 </div>
             </div>
+            <div class="hinweis fade-in">
+                Alle Preise verstehen sich als Richtwerte pro Person und werden im Erstgespräch verbindlich besprochen. Für mehrtägige Formate und Gruppenangebote gilt der jeweils zum Buchungszeitpunkt vereinbarte Preis.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LESACHTAL-TEASER ===== -->
+    <section class="teaser-section" id="lesachtal">
+        <div class="container">
+            <span class="section-label fade-in">Aktuell</span>
+            <h2 class="fade-in">Lesachtal 2027 — Natur, Brot &amp; Berggenuss</h2>
+            <div class="teaser-card fade-in">
+                <img src="images/galerie/erster-blick-ins-lesachtal.jpg" alt="Blick über Wiesen und Wald ins Lesachtal" loading="lazy">
+                <div class="teaser-text">
+                    <span class="teaser-badge">Termin vorgesehen: 10.–14. Oktober 2027</span>
+                    <h3>Eine Woche, die bleibt</h3>
+                    <p>Die erste Lesachtal-Woche hat 2026 besondere Wanderungen, echte Begegnungen und regionale Genussmomente verbunden. Im Oktober 2027 möchten wir daran anknüpfen.</p>
+                    <p>Für Interessierte ist der Zeitraum <strong>10. bis 14. Oktober 2027</strong> vorgesehen. Weitere Details — Programm, Begleitung, Leistungen und Preis — folgen nach der endgültigen Abstimmung.</p>
+                    <a href="lesachtal.html" class="btn btn-primary" style="margin-top:0.5rem;display:inline-block;">Lesachtal 2027 vormerken</a>
+                </div>
+            </div>
+            <!-- FOTOREIHE-ANFANG (wird automatisch erzeugt) -->
+            <div class="fotoreihe fade-in">
+                <a href="lesachtal.html#galerie"><img src="images/galerie/erster-blick-ins-lesachtal-klein.jpg" alt="Erster Blick ins Lesachtal" loading="lazy"></a>
+                <a href="lesachtal.html#galerie"><img src="images/galerie/der-weg-wird-schmaler-klein.jpg" alt="Der Weg wird schmaler" loading="lazy"></a>
+                <a href="lesachtal.html#galerie"><img src="images/galerie/im-ofen-klein.jpg" alt="Im Ofen" loading="lazy"></a>
+                <a href="lesachtal.html#galerie"><img src="images/galerie/und-zum-schluss-klein.jpg" alt="Und zum Schluss" loading="lazy"></a>
+            </div>
+            <p class="fotoreihe-text fade-in">
+                Eigene Aufnahmen aus der Woche im Oktober 2026 —
+                <a href="lesachtal.html#galerie">alle 19 Bilder ansehen</a>
+            </p>
+            <!-- FOTOREIHE-ENDE -->
         </div>
     </section>
 
@@ -1451,18 +1669,18 @@
                     <img src="images/team_selfie.jpg" alt="Die Glückssteiger — André Arndt, Christian Kunert und Dr. Katrin Hofmeister" loading="lazy" style="object-position: center center;">
                     <h3>Die Glückssteiger</h3>
                     <p>Premium Executive Reset. 4-5 Tage, max. 8 Personen. Gemeinsam mit Christian Kunert (Sportwissenschaftler) und Dr. Katrin Hofmeister (Ärztin für Ganzheitliche Medizin & HRV-Spezialistin).</p>
-                    <span class="coop-meta">ab 2.490 EUR/Person → Website besuchen</span>
+                    <span class="coop-meta">Preise und Termine auf der Website der Glückssteiger</span>
                 </a>
                 <a href="lesachtal.html" class="coop-card fade-in">
                     <img src="images/lesachtal.jpg" alt="Lesachtal — das ursprünglichste Tal der Alpen" loading="lazy">
                     <h3>Alpinkulinarik Lesachtal</h3>
-                    <p>Gemeinsames Projekt mit Iris Kurzweil. 5 Tage Genusswandern, Brottradition und echte Begegnungen im ursprünglichsten Tal der Alpen.</p>
-                    <span class="coop-meta">11.–15. Oktober · ab 990 EUR/Person</span>
+                    <p>Fünf Tage Genusswandern, Brottradition und echte Begegnungen im Kärntner Lesachtal. Rückblick auf 2026 und Ausblick auf die nächste Woche.</p>
+                    <span class="coop-meta">Rückblick 2026 · Ausblick 10.–14. Oktober 2027</span>
                 </a>
                 <a href="https://iris-bergwandertouren.netlify.app" target="_blank" rel="noopener" class="coop-card fade-in">
                     <img src="images/iris.jpg" alt="Iris Kurzweil — Bergwanderführerin" loading="lazy">
                     <h3>Iris Kurzweil</h3>
-                    <p>Bergwanderführerin aus Kärnten und Kooperationspartnerin für gemeinsame Projekte und Themenwochen.</p>
+                    <p>Bergwanderführerin aus Kärnten. Wir sind im Austausch über mögliche gemeinsame Projekte und Themenwochen.</p>
                     <span class="coop-meta">iris-bergwandertouren.de → Website besuchen</span>
                 </a>
             </div>
@@ -1499,7 +1717,7 @@
                         <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Nein. Die Touren sind so gewählt, dass sie zu dir passen — nicht umgekehrt.</p>
+                        <p>Für die Coaching-Tage wähle ich die Wege nach dir aus — da reicht normale Fitness und Lust aufs Gehen. Bei Bergtouren und mehrtägigen Wanderwochen ist das anders: Anspruchsvollere Bergwege verlangen Kondition und Trittsicherheit. Was für dich passt, klären wir vorher ehrlich im Gespräch.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1518,6 +1736,24 @@
                     </button>
                     <div class="faq-answer">
                         <p>In und um Reit im Winkl, Chiemgau, Berchtesgadener Land — und in den Kärntner Bergen, wo ich meine Ausbildung gemacht habe. Je nach Format und Wunsch.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Wann ist die nächste Lesachtal-Woche?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Die Woche 2026 ist gelaufen. Für die nächste ist der 10. bis 14. Oktober 2027 vorgesehen. Programm, Begleitung, Leistungen und Preis stehen noch nicht endgültig fest — melde dich gerne unverbindlich, dann informiere ich dich, sobald alles abgestimmt ist.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Ist Coaching bei dir eine Therapie?</h3>
+                        <svg class="accordion-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nein. Ich arbeite als Business-Coach IHK — wir schauen auf deine Situation, deine Entscheidungen und deine nächsten Schritte. Eine medizinische oder psychotherapeutische Behandlung ersetzt das nicht. Wenn ich merke, dass etwas anderes dran ist, sage ich dir das offen.</p>
                     </div>
                 </div>
             </div>

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alpinkulinarik Lesachtal | Klarheit am Berg</title>
-<meta name="description" content="5 Tage geführtes Genusswandern im Kärntner Lesachtal mit André Arndt und Iris Kurzweil, 11.-15. Oktober 2026. Natur, Brot und Berggenuss, ab 990 Euro pro Person.">
+<title>Alpinkulinarik Lesachtal — Rückblick 2026 &amp; Ausblick 2027 | Klarheit am Berg</title>
+<meta name="description" content="Alpinkulinarik Lesachtal: Rückblick auf die Genusswanderwoche 2026 im Kärntner Lesachtal und Ausblick auf den vorgesehenen Termin 10.-14. Oktober 2027. Natur, Brot und Berggenuss mit André Arndt.">
 
 <!-- Vorschau-Bild für WhatsApp, Facebook, Instagram -->
 <meta property="og:title" content="Alpinkulinarik Lesachtal. Natur, Brot & Berggenuss">
-<meta property="og:description" content="5 Tage geführtes Genusswandern im Kärntner Lesachtal. 11.–15. Oktober 2026. Maximal 12 Personen. Ab 990 EUR pro Person.">
+<meta property="og:description" content="Genusswandern im Kärntner Lesachtal: Rückblick 2026 und Ausblick auf den vorgesehenen Termin 10.–14. Oktober 2027.">
 <meta property="og:image" content="https://klarheit-am-berg.de/images/terrasse-wanderniki.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
@@ -172,6 +172,58 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 .footer-links { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
 .footer-links a { color: var(--text-light); text-decoration: none; font-size: 13px; }
 .footer-copy { font-size: 13px; color: var(--text-light); margin: 0; }
+
+/* ===== GALERIE ===== */
+.galerie-intro { font-size: 15px; color: var(--text-light); margin: 0 0 20px; }
+.galerie-breit { width: min(1120px, 100vw - 48px); margin-left: 50%; transform: translateX(-50%); }
+.galerie { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 0 0 12px; }
+@media (max-width: 900px) { .galerie { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 620px) { .galerie { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .galerie-breit { width: 100%; margin-left: 0; transform: none; } }
+.galerie button {
+  padding: 0; border: 0; background: none; cursor: zoom-in; display: block;
+  border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); position: relative;
+}
+.galerie img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform .35s ease; }
+.galerie button:hover img, .galerie button:focus-visible img { transform: scale(1.05); }
+.galerie button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+.galerie button.quer { grid-column: span 2; }
+.galerie button.quer img { aspect-ratio: 8 / 5; }
+.galerie-hinweis { font-size: 13px; color: var(--text-light); margin: 0 0 28px; }
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000; display: none;
+  background: rgba(20,22,20,0.94); padding: 24px;
+  align-items: center; justify-content: center;
+}
+.lightbox.offen { display: flex; }
+.lightbox-inner { max-width: 1100px; width: 100%; text-align: center; }
+.lightbox img {
+  max-width: 100%; max-height: 76vh; border-radius: 10px; object-fit: contain;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+}
+.lightbox-text { color: #f2efe9; font-size: 15px; margin-top: 14px; }
+.lightbox-zaehler { color: rgba(255,255,255,0.55); font-size: 13px; margin-top: 4px; }
+.lightbox-knopf {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255,255,255,0.14); color: #fff; font-size: 26px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox-knopf:hover { background: rgba(255,255,255,0.28); }
+.lightbox-zurueck { left: 18px; }
+.lightbox-weiter { right: 18px; }
+.lightbox-schliessen {
+  position: absolute; top: 18px; right: 18px; width: 48px; height: 48px;
+  border-radius: 50%; border: 0; cursor: pointer; font-size: 26px; line-height: 1;
+  background: rgba(255,255,255,0.14); color: #fff;
+}
+.lightbox-schliessen:hover { background: rgba(255,255,255,0.28); }
+@media (max-width: 560px) {
+  .lightbox { padding: 12px; }
+  .lightbox-knopf { width: 44px; height: 44px; font-size: 22px; }
+  .lightbox-zurueck { left: 6px; } .lightbox-weiter { right: 6px; }
+}
 </style>
 </head>
 <body>
@@ -182,28 +234,31 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 <ul class="nav-links">
 <li><a href="index.html#about">Über mich</a></li>
 <li><a href="index.html#offers">Angebote</a></li>
-<li><a href="index.html#coop">Kooperationen</a></li>
+<li><a href="index.html#lesachtal">Lesachtal</a></li>
 <li><a href="index.html#contact">Kontakt</a></li>
 </ul>
 </div>
 </nav>
 
-<p class="breadcrumb"><a href="index.html#coop">← Zurück zu Kooperationen</a></p>
+<p class="breadcrumb"><a href="index.html">← Zurück zur Startseite</a></p>
 
 <div class="hero-block">
 <img src="images/terrasse-wanderniki.jpg" alt="Terrasse des Alpenhotel Wanderniki mit Blick ins Lesachtal" loading="lazy">
 </div>
 
 <h1>Alpinkulinarik Lesachtal. Natur, Brot &amp; Berggenuss</h1>
-<p class="subtitle">5 Tage geführtes Genusswandern im Kärntner Lesachtal</p>
+<p class="subtitle">Rückblick auf 2026 — und Ausblick auf Oktober 2027</p>
 
 <div class="content">
 
+<div class="facts-box" style="border-left:4px solid var(--amber);">
+<p class="label">Kurz gesagt</p>
+<p style="margin:0;">Die erste Lesachtal-Woche hat im Oktober 2026 stattgefunden. Für die nächste ist der <strong>10. bis 14. Oktober 2027</strong> vorgesehen. Programm, Begleitung, Leistungen und Preis stehen noch nicht endgültig fest und werden hier veröffentlicht, sobald alles abgestimmt ist. Wer informiert werden möchte, kann sich jetzt unverbindlich melden.</p>
+</div>
+
 <p>Raus aus dem Alltag. Rein in eine Landschaft, die Ruhe, Ursprünglichkeit, Bergnatur und echte regionale Genusskultur verbindet.</p>
 
-<p>Vom 11. bis 15. Oktober 2026 erleben wir gemeinsam fünf besondere Tage im Lesachtal. Unser Basecamp ist das Alpenhotel Wanderniki in Obergail. Von dort aus starten wir zu geführten Wanderungen, besonderen Naturmomenten und ausgewählten regionalen Stationen rund um Brot, Mühlen, Kräuter, Bienen, Alm, Wasser und Kulinarik.</p>
-
-<p>Begleitet wird diese Woche von <strong>Iris Kurzweil</strong>, zertifizierte Bergwanderführerin, und <strong>André Arndt</strong>, zertifizierter Bergwanderführer. Wir leiten diese Tage gemeinsam und gleichberechtigt.</p>
+<p>Das Lesachtal in Kärnten war jahrhundertelang eines der letzten Selbstversorgertäler Europas — und ist bis heute ursprünglich geblieben. Basecamp war 2026 das Alpenhotel Wanderniki in Obergail. Von dort ging es zu geführten Wanderungen, besonderen Naturmomenten und ausgewählten regionalen Stationen rund um Brot, Mühlen, Kräuter, Bienen, Alm, Wasser und Kulinarik.</p>
 
 <p>Es geht nicht um höher, schneller, weiter. Es geht um bewusstes Wandern, gute Gespräche, Naturerleben, regionale Küche und das Gefühl, für ein paar Tage wirklich anzukommen.</p>
 
@@ -211,25 +266,24 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 
 <p>Diese Woche lebt von echten Begegnungen. Wir wandern nicht nur durch das Lesachtal, wir erleben es durch seine Menschen, sein Handwerk, seine Küche, seine Musik und seine besondere Ruhe.</p>
 
-<p>An den einzelnen Stationen bekommen wir persönliche Einblicke direkt von den Menschen vor Ort. Die jeweiligen Gastgeber, Produzenten und Betreiber zeigen uns ihr Handwerk, erzählen von ihrer Arbeit und lassen uns die regionale Kultur unmittelbar erleben.</p>
+<p>An den einzelnen Stationen gibt es persönliche Einblicke direkt von den Menschen vor Ort. Die Gastgeber, Produzenten und Betreiber zeigen ihr Handwerk, erzählen von ihrer Arbeit und lassen die regionale Kultur unmittelbar erleben.</p>
 
-<p>Ob Imkerlehrpfad, Mühlenführung, Kräuter- und Wurzellehrgang, Bauernladen, Speckverkostung oder Brotbacken, überall gibt es eine kleine Vorführung, persönliche Geschichten und etwas, das man mitnehmen kann: manchmal als Kostprobe, manchmal als Wissen, manchmal als Erinnerung an einen besonderen Moment.</p>
+<p>Ob Imkerlehrpfad, Mühlenführung, Kräuter- und Wurzellehrgang, Bauernladen, Speckverkostung oder Brotbacken: überall gibt es eine kleine Vorführung, persönliche Geschichten und etwas, das man mitnehmen kann — manchmal als Kostprobe, manchmal als Wissen, manchmal als Erinnerung an einen besonderen Moment.</p>
 
 <p>So entsteht keine klassische Wanderwoche, sondern eine genussvolle Reise durch Natur, Handwerk und gelebte Lesachtaler Tradition.</p>
 
-<h2>Was diese Woche besonders macht</h2>
+<h2>Was diese Woche ausmacht</h2>
 
 <ul class="feature-list">
 <li>Kleine, persönlich geführte Gruppe</li>
-<li>Begleitung durch Iris Kurzweil und André Arndt</li>
-<li>Zwei zertifizierte Bergwanderführer mit gleichberechtigter Leitung</li>
+<li>Begleitung durch einen staatlich geprüften Bergwanderführer</li>
 <li>Geführte Wanderungen zu besonderen Naturplätzen im Lesachtal</li>
 <li>Regionale Stationen mit persönlichen Vorführungen durch Menschen vor Ort</li>
 <li>Kleine Genuss- oder Erinnerungsmomente zum Mitnehmen</li>
 <li>Brotbacken, Kräuterwissen, Mühlen, Imkerei, Bauernladen und Speckverkostung</li>
-<li>Gutes Mehrgänge-Menü am Abend im Alpenhotel Wanderniki</li>
-<li>Gesellige Abende, teilweise mit regionaler Musik von Niki senior und Niki junior</li>
-<li>Saunalandschaft zur Erholung nach den Touren</li>
+<li>Gutes Mehrgänge-Menü am Abend im Hotel</li>
+<li>Gesellige Abende, 2026 teilweise mit regionaler Musik der Gastgeberfamilie</li>
+<li>Zeit zur Erholung nach den Touren</li>
 <li>Eine Woche, die Natur, Genuss, Kultur und Gemeinschaft verbindet</li>
 </ul>
 
@@ -244,20 +298,85 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 </figure>
 </div>
 
-<h2>Unser Basecamp: Alpenhotel Wanderniki</h2>
+<!-- GALERIE-ANFANG (wird automatisch erzeugt - nicht von Hand ändern) -->
+<h2 id="galerie">Eindrücke aus 2026</h2>
+<p class="galerie-intro">Alle Bilder sind eigene Aufnahmen aus der Lesachtal-Woche im Oktober 2026. Zum Vergrößern anklicken.</p>
+<div class="galerie-breit">
+<div class="galerie">
+<button type="button" class="quer" data-bild="0" aria-label="Bild vergrößern: Erster Blick ins Lesachtal"><img src="images/galerie/erster-blick-ins-lesachtal-klein.jpg" alt="Erster Blick ins Lesachtal" loading="lazy"></button>
+<button type="button" class="" data-bild="1" aria-label="Bild vergrößern: Alte Höfe am Weg zur Samalm"><img src="images/galerie/alte-hofe-am-weg-zur-samalm-klein.jpg" alt="Alte Höfe am Weg zur Samalm" loading="lazy"></button>
+<button type="button" class="" data-bild="2" aria-label="Bild vergrößern: Jahrhundertealtes Handwerk am Weg"><img src="images/galerie/jahrhundertealtes-handwerk-am-weg-klein.jpg" alt="Jahrhundertealtes Handwerk am Weg" loading="lazy"></button>
+<button type="button" class="" data-bild="3" aria-label="Bild vergrößern: Wasser, das seit jeher das Tal prägt"><img src="images/galerie/wasser-das-seit-jeher-das-tal-pragt-klein.jpg" alt="Wasser, das seit jeher das Tal prägt" loading="lazy"></button>
+<button type="button" class="" data-bild="4" aria-label="Bild vergrößern: Kirche und Kulturdenkmal im Tal"><img src="images/galerie/kirche-und-kulturdenkmal-im-tal-klein.jpg" alt="Kirche und Kulturdenkmal im Tal" loading="lazy"></button>
+<button type="button" class="" data-bild="5" aria-label="Bild vergrößern: Im Bauernladen — regional und ehrlich"><img src="images/galerie/im-bauernladen-regional-und-ehrlich-klein.jpg" alt="Im Bauernladen — regional und ehrlich" loading="lazy"></button>
+<button type="button" class="" data-bild="6" aria-label="Bild vergrößern: Der Weg wird schmaler"><img src="images/galerie/der-weg-wird-schmaler-klein.jpg" alt="Der Weg wird schmaler" loading="lazy"></button>
+<button type="button" class="" data-bild="7" aria-label="Bild vergrößern: Pause am Wasserfall"><img src="images/galerie/pause-am-wasserfall-klein.jpg" alt="Pause am Wasserfall" loading="lazy"></button>
+<button type="button" class="" data-bild="8" aria-label="Bild vergrößern: Rast mit Aussicht"><img src="images/galerie/rast-mit-aussicht-klein.jpg" alt="Rast mit Aussicht" loading="lazy"></button>
+<button type="button" class="quer" data-bild="9" aria-label="Bild vergrößern: Morgens um Viertel vor fünf"><img src="images/galerie/morgens-um-viertel-vor-funf-klein.jpg" alt="Morgens um Viertel vor fünf" loading="lazy"></button>
+<button type="button" class="" data-bild="10" aria-label="Bild vergrößern: Teig für das Lesachtaler Brot"><img src="images/galerie/teig-fur-das-lesachtaler-brot-klein.jpg" alt="Teig für das Lesachtaler Brot" loading="lazy"></button>
+<button type="button" class="" data-bild="11" aria-label="Bild vergrößern: Der alte Brotmodel aus Holz"><img src="images/galerie/der-alte-brotmodel-aus-holz-klein.jpg" alt="Der alte Brotmodel aus Holz" loading="lazy"></button>
+<button type="button" class="" data-bild="12" aria-label="Bild vergrößern: Im Ofen"><img src="images/galerie/im-ofen-klein.jpg" alt="Im Ofen" loading="lazy"></button>
+<button type="button" class="" data-bild="13" aria-label="Bild vergrößern: Frisch gebacken"><img src="images/galerie/frisch-gebacken-klein.jpg" alt="Frisch gebacken" loading="lazy"></button>
+<button type="button" class="quer" data-bild="14" aria-label="Bild vergrößern: Gemeinsam gebacken — unsere Runde in der Backstube"><img src="images/galerie/gemeinsam-gebacken-unsere-runde-in-der-backstube-klein.jpg" alt="Gemeinsam gebacken — unsere Runde in der Backstube" loading="lazy"></button>
+<button type="button" class="" data-bild="15" aria-label="Bild vergrößern: Brot nach Omas Rezept"><img src="images/galerie/brot-nach-omas-rezept-klein.jpg" alt="Brot nach Omas Rezept" loading="lazy"></button>
+<button type="button" class="" data-bild="16" aria-label="Bild vergrößern: Mehrgänge-Menü am Abend"><img src="images/galerie/mehrgange-menu-am-abend-klein.jpg" alt="Mehrgänge-Menü am Abend" loading="lazy"></button>
+<button type="button" class="" data-bild="17" aria-label="Bild vergrößern: Regional gekocht, schön angerichtet"><img src="images/galerie/regional-gekocht-schon-angerichtet-klein.jpg" alt="Regional gekocht, schön angerichtet" loading="lazy"></button>
+<button type="button" class="" data-bild="18" aria-label="Bild vergrößern: Und zum Schluss"><img src="images/galerie/und-zum-schluss-klein.jpg" alt="Und zum Schluss" loading="lazy"></button>
+</div>
+</div>
+<p class="galerie-hinweis">19 Aufnahmen aus der Woche vom 11. bis 15. Oktober 2026.</p>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+  <button class="lightbox-schliessen" type="button" aria-label="Schließen">&times;</button>
+  <button class="lightbox-knopf lightbox-zurueck" type="button" aria-label="Vorheriges Bild">&#8249;</button>
+  <button class="lightbox-knopf lightbox-weiter" type="button" aria-label="Nächstes Bild">&#8250;</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-bild" src="" alt="">
+    <p class="lightbox-text" id="lightbox-text"></p>
+    <p class="lightbox-zaehler" id="lightbox-zaehler"></p>
+  </div>
+</div>
+<script>
+(function(){
+  var bilder = [{"d": "erster-blick-ins-lesachtal", "t": "Erster Blick ins Lesachtal", "a": "Erster Blick ins Lesachtal"}, {"d": "alte-hofe-am-weg-zur-samalm", "t": "Alte Höfe am Weg zur Samalm", "a": "Alte Höfe am Weg zur Samalm"}, {"d": "jahrhundertealtes-handwerk-am-weg", "t": "Jahrhundertealtes Handwerk am Weg", "a": "Jahrhundertealtes Handwerk am Weg"}, {"d": "wasser-das-seit-jeher-das-tal-pragt", "t": "Wasser, das seit jeher das Tal prägt", "a": "Wasser, das seit jeher das Tal prägt"}, {"d": "kirche-und-kulturdenkmal-im-tal", "t": "Kirche und Kulturdenkmal im Tal", "a": "Kirche und Kulturdenkmal im Tal"}, {"d": "im-bauernladen-regional-und-ehrlich", "t": "Im Bauernladen — regional und ehrlich", "a": "Im Bauernladen — regional und ehrlich"}, {"d": "der-weg-wird-schmaler", "t": "Der Weg wird schmaler", "a": "Der Weg wird schmaler"}, {"d": "pause-am-wasserfall", "t": "Pause am Wasserfall", "a": "Pause am Wasserfall"}, {"d": "rast-mit-aussicht", "t": "Rast mit Aussicht", "a": "Rast mit Aussicht"}, {"d": "morgens-um-viertel-vor-funf", "t": "Morgens um Viertel vor fünf", "a": "Morgens um Viertel vor fünf"}, {"d": "teig-fur-das-lesachtaler-brot", "t": "Teig für das Lesachtaler Brot", "a": "Teig für das Lesachtaler Brot"}, {"d": "der-alte-brotmodel-aus-holz", "t": "Der alte Brotmodel aus Holz", "a": "Der alte Brotmodel aus Holz"}, {"d": "im-ofen", "t": "Im Ofen", "a": "Im Ofen"}, {"d": "frisch-gebacken", "t": "Frisch gebacken", "a": "Frisch gebacken"}, {"d": "gemeinsam-gebacken-unsere-runde-in-der-backstube", "t": "Gemeinsam gebacken — unsere Runde in der Backstube", "a": "Gemeinsam gebacken — unsere Runde in der Backstube"}, {"d": "brot-nach-omas-rezept", "t": "Brot nach Omas Rezept", "a": "Brot nach Omas Rezept"}, {"d": "mehrgange-menu-am-abend", "t": "Mehrgänge-Menü am Abend", "a": "Mehrgänge-Menü am Abend"}, {"d": "regional-gekocht-schon-angerichtet", "t": "Regional gekocht, schön angerichtet", "a": "Regional gekocht, schön angerichtet"}, {"d": "und-zum-schluss", "t": "Und zum Schluss", "a": "Und zum Schluss"}];
+  var box=document.getElementById("lightbox"), bild=document.getElementById("lightbox-bild"),
+      text=document.getElementById("lightbox-text"), zaehler=document.getElementById("lightbox-zaehler"), i=0;
+  function zeige(n){ i=(n+bilder.length)%bilder.length; var b=bilder[i];
+    bild.src="images/galerie/"+b.d+".jpg"; bild.alt=b.a; text.textContent=b.t;
+    zaehler.textContent=(i+1)+" von "+bilder.length; }
+  function auf(n){ zeige(n); box.classList.add("offen"); document.body.style.overflow="hidden"; }
+  function zu(){ box.classList.remove("offen"); document.body.style.overflow=""; }
+  document.querySelectorAll(".galerie button").forEach(function(k){
+    k.addEventListener("click", function(){ auf(parseInt(k.dataset.bild,10)); }); });
+  box.querySelector(".lightbox-schliessen").addEventListener("click", zu);
+  box.querySelector(".lightbox-zurueck").addEventListener("click", function(e){ e.stopPropagation(); zeige(i-1); });
+  box.querySelector(".lightbox-weiter").addEventListener("click", function(e){ e.stopPropagation(); zeige(i+1); });
+  box.addEventListener("click", function(e){ if(e.target===box||e.target.classList.contains("lightbox-inner")) zu(); });
+  document.addEventListener("keydown", function(e){ if(!box.classList.contains("offen")) return;
+    if(e.key==="Escape") zu(); if(e.key==="ArrowLeft") zeige(i-1); if(e.key==="ArrowRight") zeige(i+1); });
+  var x0=null;
+  box.addEventListener("touchstart", function(e){ x0=e.changedTouches[0].clientX; }, {passive:true});
+  box.addEventListener("touchend", function(e){ if(x0===null) return;
+    var d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) zeige(d<0?i+1:i-1); x0=null; }, {passive:true});
+})();
+</script>
+<!-- GALERIE-ENDE -->
 
-<p>Unser Ausgangspunkt ist das Alpenhotel Wanderniki in Obergail, ein Ort, an dem Gastfreundschaft, regionale Küche und Erholung zusammenkommen.</p>
+<h2>Basecamp 2026: Alpenhotel Wanderniki</h2>
 
-<p>Nach den gemeinsamen Wander- und Erlebnistagen erwartet uns am Abend ein gutes Mehrgänge-Menü im Hotel. Die Küche ist regional geprägt, liebevoll zubereitet und passt gut zum Charakter dieser Woche: bewusst genießen, gut essen und den Tag gemeinsam ausklingen lassen.</p>
+<p>Ausgangspunkt war 2026 das Alpenhotel Wanderniki in Obergail — ein Ort, an dem Gastfreundschaft, regionale Küche und Erholung zusammenkommen.</p>
 
-<p>An manchen Abenden wird es besonders gesellig, mit regionaler Musik von Niki senior und Niki junior persönlich, wenn es zeitlich und organisatorisch passt. Genau diese Mischung aus Kulinarik, Begegnung und echter Gastfreundschaft macht die Tage im Lesachtal so besonders.</p>
+<p>Nach den gemeinsamen Wander- und Erlebnistagen gab es am Abend ein Mehrgänge-Menü im Hotel. Die Küche ist regional geprägt, liebevoll zubereitet und passte gut zum Charakter dieser Woche: bewusst genießen, gut essen und den Tag gemeinsam ausklingen lassen.</p>
 
-<p>Wer nach der Tour zur Ruhe kommen möchte, findet in der Saunalandschaft des Hotels den passenden Rahmen zur Erholung. Wärme, Ruhe und Entspannung runden die Bergtage ab.</p>
+<p>An manchen Abenden wurde es besonders gesellig, mit regionaler Musik der Gastgeberfamilie. Genau diese Mischung aus Kulinarik, Begegnung und echter Gastfreundschaft hat die Tage im Lesachtal besonders gemacht.</p>
 
-<h2>Programmablauf</h2>
+<p>Wer nach der Tour zur Ruhe kommen wollte, fand in der Saunalandschaft des Hotels den passenden Rahmen. Für 2027 ist die Unterkunft noch nicht abschließend vereinbart.</p>
+
+<h2>So war das Programm 2026</h2>
+
+<p>Die folgenden Tage zeigen, wie die Woche 2026 abgelaufen ist. Sie sind als Eindruck und Inspiration gedacht — für 2027 sind Routen, Stationen und Zeiten noch nicht festgelegt.</p>
 
 <div class="day-card">
-<p class="day-date">Sonntag, 11.10.</p>
+<p class="day-date">Tag 1 · Sonntag, 11.10.2026</p>
 <p class="day-title">Ankommen in Obergail</p>
 <p>Individuelle Anreise im Alpenhotel Wanderniki. Zum Einstieg wandern wir Richtung Obergailer See und Endeberghütte. Gegen 14:00 Uhr besuchen wir den Imkerlehrpfad. Dort erhalten wir erste Einblicke in die Natur- und Lebenswelt des Lesachtals und erfahren mehr über Bienen, Landschaft und regionale Zusammenhänge.</p>
 <div class="day-stats">
@@ -268,7 +387,7 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 </div>
 
 <div class="day-card">
-<p class="day-date">Montag, 12.10.</p>
+<p class="day-date">Tag 2 · Montag, 12.10.2026</p>
 <p class="day-title">Samalm, Mühlen &amp; Kultur</p>
 <p>Heute führt uns eine geführte Wanderung zur Samalm. Auf dem Weg erleben wir Alm, Aussicht und die besondere Ruhe dieser Landschaft. Am Nachmittag, gegen 14:00 Uhr, erwartet uns eine Mühlenführung und Kirchenführung. Dabei tauchen wir ein in Geschichte, Handwerk, Kultur und regionale Identität des Lesachtals.</p>
 <div class="day-stats">
@@ -279,7 +398,7 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 </div>
 
 <div class="day-card">
-<p class="day-date">Dienstag, 13.10.</p>
+<p class="day-date">Tag 3 · Dienstag, 13.10.2026</p>
 <p class="day-title">Gamskofel &amp; Speckverkostung</p>
 <p>Der Gamskofel steht im Mittelpunkt dieses Tages. Die geführte Bergtour schenkt uns Weitblick, Bewegung in klarer Bergluft und ein intensives Naturerlebnis. Im Anschluss genießen wir eine regionale Speckverkostung, je nach Wetter und Organisation beim Alpenhotel Wanderniki oder stimmungsvoll am See. Auch hier geht es nicht nur ums Probieren, sondern um das Kennenlernen regionaler Produkte und ihrer Entstehung.</p>
 <div class="day-stats">
@@ -290,7 +409,7 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 </div>
 
 <div class="day-card">
-<p class="day-date">Mittwoch, 14.10.</p>
+<p class="day-date">Tag 4 · Mittwoch, 14.10.2026</p>
 <p class="day-title">Schwalbenkofel, Bauernladen &amp; Kräuterwissen</p>
 <p>Unsere Tour führt uns auf den Schwalbenkofel. Auch dieser Tag verbindet Bewegung, Aussicht und Naturerleben. Um 14:00 Uhr erwartet uns im Bauernladen ein kleines regionales Essen: Speckknödel mit Suppe oder Krautsalat und Getränk. Anschließend folgt ein Kräuter- und Wurzellehrgang, bei dem wir mehr über Pflanzen, Wurzeln und traditionelles Naturwissen erfahren.</p>
 <div class="day-stats">
@@ -301,57 +420,52 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 </div>
 
 <div class="day-card">
-<p class="day-date">Donnerstag, 15.10.</p>
+<p class="day-date">Tag 5 · Donnerstag, 15.10.2026</p>
 <p class="day-title">Brotbacken &amp; genussvoller Abschluss</p>
 <p>Zum Abschluss widmen wir uns einer der wichtigsten Traditionen des Lesachtals: dem Brotbacken. Von 11:00 Uhr bis ca. 14:30 Uhr erleben wir, wie aus einfachen Zutaten, Zeit und Handwerk ein echtes Stück regionaler Identität entsteht. Danach lassen wir die gemeinsamen Tage bewusst ausklingen und treten individuell die Heimreise an.</p>
 <p class="day-highlight">Erlebnis des Tages: Brottradition, gemeinsames Tun und ein wertvoller Abschluss.</p>
 </div>
 
-<h2>Sportlich wandern oder gemütlich genießen?</h2>
+<h2>Wie anspruchsvoll ist das Wandern?</h2>
 
-<p>Unsere Lesachtal-Woche ist als genussvolles Bergwandern geplant, mit schönen Touren, bewussten Pausen und ausreichend Zeit für Natur, Aussicht und regionale Erlebnisse.</p>
+<p>Die Lesachtal-Woche ist als genussvolles Bergwandern angelegt: schöne Touren, bewusste Pausen und ausreichend Zeit für Natur, Aussicht und regionale Erlebnisse.</p>
 
-<p>Eine solide Grundkondition und Trittsicherheit auf Bergwegen sind wichtig. Einzelne Touren können je nach Wetter, Wegverhältnissen und Tagesform anspruchsvoller sein.</p>
+<p>Trotzdem gilt ganz klar: <strong>Eine solide Grundkondition und Trittsicherheit auf Bergwegen sind nötig.</strong> Einzelne Touren führen über 2.000 Meter und sind anspruchsvoll. Je nach Wetter, Wegverhältnissen und Tagesform können sie auch anspruchsvoller ausfallen als geplant. Ich verspreche niemandem, dass jede Tour für jeden passt — wir klären vorher gemeinsam und ehrlich, was für dich das Richtige ist.</p>
 
-<p>Da wir mit Iris Kurzweil und André Arndt als zwei Bergwanderführern unterwegs sind, können wir besonders gut auf die Gruppe eingehen. Je nach Wetter, Kondition, Tagesform und Interesse der Teilnehmer haben wir die Möglichkeit, das Tempo anzupassen oder die Gruppe bei Bedarf auch einmal aufzuteilen.</p>
+<p>Ob es bei einzelnen Touren Alternativwege gibt oder die Gruppe geteilt werden kann, hängt davon ab, wie viele qualifizierte Begleiter tatsächlich dabei sind und ob die Bedingungen es zulassen. Das sage ich vor der Buchung verbindlich zu — nicht vorher auf der Webseite.</p>
 
-<p>So können sowohl Gäste, die etwas sportlicher unterwegs sein möchten, als auch diejenigen, die es ruhiger und genussvoller angehen wollen, eine passende und wertvolle Zeit erleben. Sicherheit, gute Stimmung und das gemeinsame Erlebnis stehen dabei immer im Mittelpunkt.</p>
-
-<p>Zwei Guides bedeuten mehr Flexibilität: Wir können individueller begleiten, besser auf unterschiedliche Bedürfnisse eingehen und die Tage verantwortungsvoll gestalten.</p>
+<p>Sicherheit, gute Stimmung und das gemeinsame Erlebnis stehen immer im Mittelpunkt.</p>
 
 <div class="facts-box">
-<p class="label">Im Überblick</p>
+<p class="label">Ausblick 2027 — Stand heute</p>
 <ul>
-<li>Termin: 11. bis 15. Oktober 2026</li>
-<li>Dauer: 5 Tage / 4 Nächte</li>
-<li>Ort: Kärntner Lesachtal / Obergail</li>
-<li>Basecamp: Alpenhotel Wanderniki</li>
-<li>Leitung: Iris Kurzweil &amp; André Arndt</li>
-<li>Qualifikation: zertifizierte Bergwanderführerin und zertifizierter Bergwanderführer</li>
-<li>Gruppe: maximal 12 Personen</li>
-<li>Preis: ab 990 Euro pro Person</li>
+<li>Termin: 10. bis 14. Oktober 2027 <em>(vorgesehen)</em></li>
+<li>Dauer: 5 Tage / 4 Nächte <em>(geplant)</em></li>
+<li>Ort: Kärntner Lesachtal</li>
+<li>Unterkunft: noch nicht abschließend vereinbart</li>
+<li>Begleitung: André Arndt, staatlich geprüfter Bergwanderführer — weitere Begleitung offen</li>
+<li>Gruppengröße: klein, genaue Zahl noch offen</li>
+<li>Preis und Leistungen: noch nicht festgelegt</li>
 <li>Charakter: geführt, persönlich, regional, genussvoll, naturverbunden</li>
 </ul>
+<p style="margin:1rem 0 0;font-size:0.95rem;color:var(--text-light);">Alles, was hier als „vorgesehen", „geplant" oder „offen" steht, ist noch nicht zugesichert. Verbindlich wird es erst, wenn es hier ohne diesen Hinweis steht.</p>
 </div>
 
-<h2>Enthalten sind unter anderem</h2>
-
-<ul class="feature-list">
-<li>4 Nächte im Alpenhotel Wanderniki</li>
-<li>Halbpension mit gutem Mehrgänge-Menü am Abend</li>
-<li>Geführte Wanderungen mit Iris Kurzweil und André Arndt</li>
-<li>Persönliche Betreuung durch zwei zertifizierte Bergwanderführer</li>
-<li>Imkerlehrpfad mit Einblicken vor Ort</li>
-<li>Mühlen- und Kirchenführung</li>
-<li>Regionale Speckverkostung</li>
-<li>Kleines regionales Essen im Bauernladen</li>
-<li>Kräuter- und Wurzellehrgang</li>
-<li>Gemeinsames Brotbacken</li>
+<div class="facts-box">
+<p class="label">Im Überblick 2026 — so war es</p>
+<ul>
+<li>Termin: 11. bis 15. Oktober 2026</li>
+<li>Ort: Kärntner Lesachtal / Obergail</li>
+<li>Basecamp: Alpenhotel Wanderniki</li>
+<li>Vier Nächte mit Halbpension und Mehrgänge-Menü am Abend</li>
+<li>Geführte Wanderungen, Imkerlehrpfad, Mühlen- und Kirchenführung</li>
+<li>Regionale Speckverkostung und kleines Essen im Bauernladen</li>
+<li>Kräuter- und Wurzellehrgang sowie gemeinsames Brotbacken</li>
 <li>Vorführungen und persönliche Einblicke an den jeweiligen Stationen</li>
-<li>Kleine Genuss- oder Erinnerungsmomente zum Mitnehmen</li>
-<li>Nutzung der Saunalandschaft im Hotel, soweit im Hotelangebot enthalten</li>
-<li>Gesellige Abende im Hotel, teilweise mit regionaler Musik</li>
+<li>Gesellige Abende, teilweise mit regionaler Musik</li>
 </ul>
+<p style="margin:1rem 0 0;font-size:0.95rem;color:var(--text-light);">Diese Leistungen beschreiben die Woche 2026. Was 2027 enthalten ist, wird nach der Abstimmung veröffentlicht.</p>
+</div>
 
 <h2>Für wen ist diese Woche geeignet?</h2>
 
@@ -361,13 +475,14 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 
 <p class="tagline">Raus aus dem Alltag. Rein ins Lesachtal.</p>
 
-<a href="lesachtal-anmeldung.html" class="cta-button">Jetzt Platz sichern</a>
+<a href="lesachtal-anmeldung.html" class="cta-button">Interesse für Oktober 2027 anmelden</a>
 
 <h2>Kontakt</h2>
 
-<p>Du möchtest dabei sein oder mehr erfahren? Dann melde dich gerne direkt bei mir. Ich erzähle dir persönlich, ob die Woche zu dir passt, welche Anforderungen wichtig sind und wie Unterkunft, Verpflegung und Programm genau aussehen.</p>
+<p>Du möchtest 2027 dabei sein oder einfach informiert werden, sobald alles steht? Dann melde dich gerne direkt bei mir. Ich erzähle dir persönlich, ob die Woche zu dir passen könnte und welche Anforderungen wichtig sind. Eine Anmeldung ist das noch nicht — es ist unverbindlich und kostet nichts.</p>
 
-<p><strong>André Arndt</strong><br>Zertifizierter Bergwanderführer, Business Coach IHK</p>
+<p><strong>André Arndt</strong><br>Staatlich geprüfter Bergwanderführer, Business Coach IHK<br>
+<a href="mailto:kontakt@klarheit-am-berg.de">kontakt@klarheit-am-berg.de</a> &middot; Telefon +49 171 2244458</p>
 
 </div>
 
