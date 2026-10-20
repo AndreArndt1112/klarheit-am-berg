@@ -1324,7 +1324,8 @@
 }
 .video-titel { padding: 1rem 1.1rem 1.2rem; font-weight: 600; color: #1e3d2a; line-height: 1.45; }
 @media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .video-grid { grid-template-columns: 1fr; gap: 16px; } }
+@media (max-width: 560px) { .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .video-titel { padding: 0.7rem 0.8rem 0.9rem; font-size: 14px; } }
 </style>
 </head>
 <body>
@@ -1576,6 +1577,55 @@
     </div>
 
     <!-- VIDEOS-ANFANG (wird automatisch erzeugt) -->
+
+    <!-- ===== VIDEOS ===== -->
+    <section class="offers-section" id="videos" style="background:var(--cream-dark);">
+        <div class="container">
+            <span class="section-label fade-in">Videos</span>
+            <h2 class="fade-in">Gedanken vom Berg.</h2>
+            <p class="fade-in" style="max-width:720px;color:var(--text-light);line-height:1.8;margin-top:1rem;">
+                Kurze Videos zu Vertrauen, F&uuml;hrung und den Fragen, die mir im Coaching immer wieder begegnen.
+                Dieselben, die ich auch bei Instagram und Facebook zeige &mdash; hier ohne Konto und ohne Mitlesen Dritter.
+            </p>
+            <div class="fade-in">
+<div class="video-grid">
+  <div class="video-karte">
+    <div class="video-buehne">
+      <img src="videos/coaching-vertrauen.jpg" alt="Vorschaubild: Vertrauen" loading="lazy">
+      <button class="video-start" type="button" aria-label="Video abspielen: Vertrauen" data-quelle="videos/coaching-vertrauen.mp4" data-bild="videos/coaching-vertrauen.jpg"></button>
+      <span class="video-dauer">1:16</span>
+    </div>
+    <p class="video-titel">Vertrauen</p>
+  </div>
+  <div class="video-karte">
+    <div class="video-buehne">
+      <img src="videos/coaching-entscheidungen.jpg" alt="Vorschaubild: Entscheidungen" loading="lazy">
+      <button class="video-start" type="button" aria-label="Video abspielen: Entscheidungen" data-quelle="videos/coaching-entscheidungen.mp4" data-bild="videos/coaching-entscheidungen.jpg"></button>
+      <span class="video-dauer">1:12</span>
+    </div>
+    <p class="video-titel">Entscheidungen</p>
+  </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+<script>
+(function(){
+  document.querySelectorAll(".video-start").forEach(function(k){
+    k.addEventListener("click", function(){
+      var buehne = k.parentNode;
+      var v = document.createElement("video");
+      v.src = k.dataset.quelle; v.controls = true; v.preload = "auto";
+      v.playsInline = true; v.setAttribute("playsinline","");
+      v.poster = k.dataset.bild;
+      buehne.innerHTML = ""; buehne.appendChild(v);
+      var p = v.play();
+      if (p && p.catch) { p.catch(function(){ v.muted = true; v.play(); }); }
+    });
+  });
+})();
+</script>
 <!-- VIDEOS-ENDE -->
 
     <!-- ===== ANGEBOTE ===== -->

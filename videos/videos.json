@@ -1,5 +1,18 @@
 {
- "Coaching": [],
+ "Coaching": [
+  {
+   "datei": "coaching-vertrauen",
+   "titel": "Vertrauen",
+   "quer": false,
+   "dauer": 76
+  },
+  {
+   "datei": "coaching-entscheidungen",
+   "titel": "Entscheidungen",
+   "quer": false,
+   "dauer": 72
+  }
+ ],
  "Lesachtal": [
   {
    "datei": "lesachtal-ein-gast-uber-die-woche",
