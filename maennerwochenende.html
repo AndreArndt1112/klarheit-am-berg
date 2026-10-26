@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entscheidung – Männer-Wochenende am Berg | Klarheit am Berg</title>
+<meta name="description" content="Zwei Tage am Berg für Männer, die vor einer Entscheidung stehen. Kleine Runde, max. 6 Teilnehmer, Reit im Winkl. Mit André Arndt — Business-Coach IHK und staatlich geprüfter Bergwanderführer.">
+
+<!-- Vorschau-Bild für WhatsApp, Facebook, Instagram -->
+<meta property="og:title" content="Entscheidung. Zwei Tage am Berg für Männer.">
+<meta property="og:description" content="Keine Übungen, keine Sprüche — gehen, reden und am Ende wissen, wie es weitergeht. Kleine Runde in Reit im Winkl.">
+<meta property="og:image" content="https://klarheit-am-berg.de/images/reit_panorama.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:url" content="https://klarheit-am-berg.de/maennerwochenende.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://klarheit-am-berg.de/images/reit_panorama.jpg">
+<style>
+  :root {
+    --green: #2E3923;
+    --green-mid: #3a4d2e;
+    --green-light: #4a6040;
+    --amber: #C79A4E;
+    --amber-dark: #B5812F;
+    --cream: #F3EBDA;
+    --cream-dark: #e8ddc8;
+    --text: #333;
+    --text-light: #666;
+    --white: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia', serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--green);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo { color: var(--white); font-size: 17px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; }
+  .nav-logo span { color: var(--amber); }
+  .nav-back { color: var(--cream); font-size: 13px; text-decoration: none; opacity: 0.8; font-family: sans-serif; }
+  .nav-back:hover { opacity: 1; }
+
+  /* HERO */
+  .hero { position: relative; height: 420px; overflow: hidden; }
+  .hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(46,57,35,0.6) 100%);
+  }
+  .hero-text {
+    position: absolute;
+    bottom: 36px; left: 0; right: 0;
+    text-align: center;
+    color: var(--white);
+    padding: 0 24px;
+  }
+  .hero-eyebrow {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .hero-sub {
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    opacity: 0.9;
+  }
+
+  /* LAYOUT */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 680px) {
+    .page { grid-template-columns: 1fr; gap: 32px; }
+    .hero { height: 300px; }
+  }
+
+  .info h2 {
+    font-size: 22px;
+    color: var(--green);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .info p {
+    font-family: sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+  .info ul {
+    font-family: sans-serif;
+    font-size: 15px;
+    margin: 0 0 16px 20px;
+    line-height: 1.7;
+  }
+  .info ul li { margin-bottom: 7px; }
+
+  .facts {
+    background: var(--green);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+  }
+  .facts-title {
+    font-family: sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .fact-row:last-child { border-bottom: none; }
+  .fact-label { opacity: 0.7; }
+  .fact-value { font-weight: 600; color: var(--amber); text-align: right; }
+
+  .guarantee {
+    background: var(--cream-dark);
+    border-left: 3px solid var(--amber-dark);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  /* ABLAUF */
+  .ablauf { background: var(--white); border-top: 1px solid var(--cream-dark); }
+  .ablauf-inner { max-width: 900px; margin: 0 auto; padding: 52px 24px 56px; }
+  .ablauf h2 { font-size: 24px; color: var(--green); margin-bottom: 8px; }
+  .ablauf-sub { font-family: sans-serif; font-size: 15px; color: var(--text-light); margin-bottom: 28px; }
+  .tage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 680px) { .tage { grid-template-columns: 1fr; } }
+  .tag {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .tag-label {
+    font-family: sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber-dark);
+    margin-bottom: 8px;
+  }
+  .tag h3 { font-size: 17px; color: var(--green); margin-bottom: 10px; }
+  .tag p { font-family: sans-serif; font-size: 14px; color: var(--text); line-height: 1.65; }
+
+  /* FORM */
+  .form-wrap {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 40px rgba(46,57,35,0.12);
+  }
+  .form-wrap h3 { font-size: 20px; color: var(--green); margin-bottom: 6px; }
+  .form-sub { font-family: sans-serif; font-size: 13px; color: var(--text-light); margin-bottom: 24px; }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--cream-dark);
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--cream);
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--green);
+    background: var(--white);
+  }
+  .field textarea { resize: vertical; min-height: 90px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 420px) { .field-row { grid-template-columns: 1fr; } }
+  .submit-btn {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.3px;
+    margin-top: 6px;
+  }
+  .submit-btn:hover { background: var(--green-light); }
+  .privacy-note {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .success-msg { display: none; text-align: center; padding: 40px 20px; }
+  .success-msg .check { font-size: 48px; margin-bottom: 16px; }
+  .success-msg h3 { font-size: 22px; color: var(--green); margin-bottom: 12px; }
+  .success-msg p { font-family: sans-serif; font-size: 15px; color: var(--text-light); line-height: 1.6; }
+
+  /* FOOTER */
+  footer {
+    background: var(--green);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 24px;
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+  footer a { color: var(--amber); text-decoration: none; }
+  .kleingedruckt {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px 56px;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Klarheit <span>am Berg</span></a>
+  <a href="index.html#angebote" class="nav-back">← Zurück zu den Angeboten</a>
+</nav>
+
+<div class="hero">
+  <img src="images/winklmoosalm_hero.jpg" alt="Blick von der Winklmoosalm über das Hochtal auf die Berge">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">Männer-Wochenende · Reit im Winkl</p>
+    <h1 class="hero-title">Entscheidung.</h1>
+    <p class="hero-sub">Zwei Tage am Berg. Sechs Männer. Eine Frage.</p>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="info">
+    <h2>Du weißt längst, dass sich was ändern muss.</h2>
+    <p>
+      Vielleicht steht eine Übergabe an. Vielleicht ein Wechsel, über den du seit Monaten
+      nachdenkst und nicht sprichst. Vielleicht ist der Job noch da, aber die Lust ist weg.
+      Vielleicht hat sich privat etwas verschoben, und du funktionierst einfach weiter.
+    </p>
+    <p>
+      Nebeneinander, in Bewegung, mit Blick nach vorne: Vielen fällt so ein Gespräch
+      unterwegs leichter als gegenüber am Tisch. Und in einer Runde, in der alle an
+      einem ähnlichen Punkt stehen.
+    </p>
+    <p>
+      Deshalb ist dieses Wochenende eine Männerrunde — nicht als Abgrenzung, sondern weil
+      die Themen ähnlich sind und das die Gespräche leichter macht.
+    </p>
+    <p>
+      Wir gehen zwei Tage in die Berge. Du bringst deine Frage mit. Ich bringe 35 Jahre
+      Führungserfahrung, einen eigenen Ausstieg und das Handwerk mit, dir die richtigen
+      Fragen zu stellen. Am Sonntag formulierst du einen Schritt, den du wirklich gehen wirst.
+    </p>
+
+    <h2 style="margin-top:28px;">Was es nicht ist</h2>
+    <ul>
+      <li>Keine Meditation, kein Schweigen, kein Yoga.</li>
+      <li>Keine Seminarsprüche und keine Flipcharts.</li>
+      <li>Kein Erfahrungsaustausch, bei dem jeder von sich erzählt und nichts passiert.</li>
+      <li>Kein sportlicher Härtetest — es geht ums Gehen, nicht um Höhenmeter.</li>
+    </ul>
+
+    <div class="facts">
+      <p class="facts-title">Im Überblick</p>
+      <div class="fact-row"><span class="fact-label">Dauer</span><span class="fact-value">Freitag Mittag bis Sonntag Nachmittag</span></div>
+      <div class="fact-row"><span class="fact-label">Ort</span><span class="fact-value">Reit im Winkl und Umgebung</span></div>
+      <div class="fact-row"><span class="fact-label">Gruppe</span><span class="fact-value">4 bis 6 Männer</span></div>
+      <div class="fact-row"><span class="fact-label">Begleitung</span><span class="fact-value">490 € pro Person</span></div>
+      <div class="fact-row"><span class="fact-label">Unterkunft</span><span class="fact-value">buchst du selbst, ca. 200–250 €</span></div>
+      <div class="fact-row"><span class="fact-label">Dazu im Preis</span><span class="fact-value">Vorgespräch &amp; Nachgespräch</span></div>
+      <div class="fact-row"><span class="fact-label">Kondition</span><span class="fact-value">normale Fitness genügt</span></div>
+      <div class="fact-row"><span class="fact-label">Termine</span><span class="fact-value">in Abstimmung — trag dich ein</span></div>
+    </div>
+
+    <div class="guarantee">
+      <strong>Zur Unterkunft:</strong> Wir schlafen oben am Berg, nicht im Tal — das Haus
+      liegt auf 1.180 Metern, die Touren starten vor der Haustür. Ich nenne dir das Haus und das
+      Stichwort, damit sie dort gleich wissen, worum es geht. Buchen und bezahlen tust du selbst und auf deinen Namen, der Vertrag
+      kommt zwischen dir und dem Haus zustande. Bei mir bezahlst du nur die Begleitung.
+    </div>
+
+    <div class="guarantee">
+      Vorher telefonieren wir 30 Minuten. Kostenlos, kein Verkaufsgespräch. Wir schauen
+      ehrlich, ob das Wochenende zu deiner Situation passt — und wenn nicht, sage ich dir das.
+    </div>
+
+    <div class="guarantee">
+      Dieses Wochenende ist eines von mehreren Formaten. Die
+      <a href="index.html#angebote" style="color:var(--green);">Klarheits-Tage</a> und die
+      <a href="lesachtal.html" style="color:var(--green);">Lesachtal-Woche</a>
+      sind für alle offen.
+    </div>
+  </div>
+
+  <div class="form-wrap" id="form-container">
+    <h3>Platz vormerken</h3>
+    <p class="form-sub">Unverbindlich. Du erfährst die Termine als Erster und entscheidest dann.</p>
+
+    <form id="anmelde-form" action="https://formsubmit.co/andrearndt1@gmx.de" method="POST">
+      <input type="hidden" name="_subject" value="Männer-Wochenende: Platz vormerken">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://klarheit-am-berg.de/maennerwochenende.html?danke=1">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" placeholder="Max" required>
+        </div>
+        <div class="field">
+          <label for="nachname">Nachname</label>
+          <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+      </div>
+
+      <div class="field">
+        <label for="telefon">Telefon (optional)</label>
+        <input type="tel" id="telefon" name="telefon" placeholder="+49 ...">
+      </div>
+
+      <div class="field">
+        <label for="zeitraum">Wann würde es dir passen?</label>
+        <select id="zeitraum" name="zeitraum">
+          <option value="fruehling">Frühling</option>
+          <option value="herbst">Herbst</option>
+          <option value="beides">Beides möglich</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="nachricht">Worum geht es bei dir? (optional)</label>
+        <textarea id="nachricht" name="nachricht" placeholder="Ein paar Sätze genügen. Bleibt zwischen uns."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Platz vormerken</button>
+      <p class="privacy-note">
+        Deine Daten werden nur für die Bearbeitung deiner Anfrage verwendet
+        und nicht weitergegeben. <a href="index.html#datenschutz" style="color:var(--green);">Datenschutz</a>
+      </p>
+    </form>
+
+    <div class="success-msg" id="success">
+      <div class="check">&#10003;</div>
+      <h3>Danke, du bist vorgemerkt.</h3>
+      <p>Ich melde mich in der Regel innerhalb von 48 Stunden persönlich bei dir — und sage dir Bescheid, sobald die Termine stehen.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="ablauf">
+  <div class="ablauf-inner">
+    <h2>Wie die zwei Tage laufen</h2>
+    <p class="ablauf-sub">Kein durchgetakteter Plan. Aber eine klare Richtung.</p>
+    <div class="tage">
+      <div class="tag">
+        <p class="tag-label">Freitag</p>
+        <h3>Ankommen</h3>
+        <p>
+          Eine kurze Runde am Nachmittag, damit der Kopf vom Fahren runterkommt.
+          Abends sitzen wir zusammen, und jeder legt seine Frage auf den Tisch —
+          in einem Satz, nicht in einer Lebensgeschichte.
+        </p>
+      </div>
+      <div class="tag">
+        <p class="tag-label">Samstag</p>
+        <h3>Der lange Tag</h3>
+        <p>
+          Die große Tour. Unterwegs gehe ich zweimal mit jedem von euch ein Stück
+          allein — da passiert das Eigentliche. Abends die Runde: Was hat sich
+          verschoben, wo steht ihr jetzt?
+        </p>
+      </div>
+      <div class="tag">
+        <p class="tag-label">Sonntag</p>
+        <h3>Der Schritt</h3>
+        <p>
+          Nach dem Frühstück räumen wir die Zimmer und packen ins Auto — dann ist der
+          Kopf frei für den letzten Teil. Noch einmal eine kurze Runde, und zum Abschluss
+          sitzen wir auf der Terrasse: Jeder sagt den einen Schritt, den er in den
+          nächsten vier Wochen wirklich geht. Vier Wochen später telefonieren wir —
+          und du erzählst mir, wie es gelaufen ist.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="kleingedruckt">
+  <p>
+    Das sind die Ziele, auf die wir gemeinsam hinarbeiten — keine zugesicherten Ergebnisse.
+    Wie viel sich bewegt, hängt von deinem Thema, von dir und auch vom Tag ab. Coaching ist
+    keine Therapie und ersetzt keine medizinische oder psychotherapeutische Behandlung.
+    Geführt wird von André Arndt, staatlich geprüfter Bergwanderführer und Business-Coach IHK,
+    haftpflichtversichert. Die Wege wähle ich nach Wetter und Gruppe aus; kurzfristige
+    Änderungen gehören am Berg dazu.
+  </p>
+</div>
+
+<footer>
+  <p>&copy; 2026 André Arndt &mdash; Klarheit am Berg &nbsp;|&nbsp;
+     <a href="index.html#impressum">Impressum</a> &nbsp;|&nbsp;
+     <a href="index.html#datenschutz">Datenschutz</a>
+  </p>
+</footer>
+
+<script>
+  // Erfolgsmeldung anzeigen wenn nach dem Absenden zurückgeleitet wurde
+  if (new URLSearchParams(window.location.search).get('danke') === '1') {
+    document.getElementById('anmelde-form').style.display = 'none';
+    document.getElementById('success').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

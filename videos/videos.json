@@ -1,6 +1,12 @@
 {
  "Coaching": [
   {
+   "datei": "coaching-perspektivwechsel",
+   "titel": "Perspektivwechsel",
+   "quer": false,
+   "dauer": 52
+  },
+  {
    "datei": "coaching-vertrauen",
    "titel": "Vertrauen",
    "quer": false,
