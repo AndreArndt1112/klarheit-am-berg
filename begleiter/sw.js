@@ -1,9 +1,16 @@
 // Begleiter — offline verfügbar machen
-// Die App wird beim ersten Öffnen gespeichert und läuft danach ohne Netz.
-// Ist Netz da, wird im Hintergrund nach einer neueren Fassung geschaut.
+// Die App wird beim ersten Öffnen gespeichert und läuft danach ohne Netz,
+// mitsamt den Schriften. Ist Netz da, wird im Hintergrund nach einer
+// neueren Fassung geschaut.
 
-const CACHE = 'begleiter-v1';
+const CACHE = 'begleiter-v2';
 const DATEIEN = ['./', './index.html'];
+
+// Auch diese fremden Adressen speichern, damit die Schrift offline stimmt
+const AUCH_SPEICHERN = [
+  'fonts.googleapis.com',
+  'fonts.gstatic.com'
+];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
@@ -22,19 +29,22 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  // Nur eigene Dateien behandeln; Schriften von Google laufen normal weiter
-  if (url.origin !== location.origin) return;
+  const eigene = url.origin === location.origin;
+  const schrift = AUCH_SPEICHERN.some((h) => url.hostname === h);
+  if (!eigene && !schrift) return;
 
   e.respondWith(
     caches.open(CACHE).then((cache) =>
       cache.match(e.request).then((gespeichert) => {
         const ausDemNetz = fetch(e.request)
           .then((antwort) => {
-            if (antwort && antwort.status === 200) cache.put(e.request, antwort.clone());
+            // Schriften kommen teils als "opaque" zurück - trotzdem speichern
+            if (antwort && (antwort.status === 200 || antwort.type === 'opaque')) {
+              cache.put(e.request, antwort.clone()).catch(() => {});
+            }
             return antwort;
           })
           .catch(() => gespeichert);
-        // Gespeicherte Fassung sofort zeigen, im Hintergrund aktualisieren
         return gespeichert || ausDemNetz;
       })
     )
