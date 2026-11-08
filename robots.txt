@@ -1,0 +1,47 @@
+# Klarheit am Berg – Suchmaschinen und KI-Assistenten sind willkommen
+User-agent: *
+Allow: /
+Disallow: /begleiter/
+
+# KI-Suchdienste ausdrücklich erlaubt (ChatGPT, Claude, Perplexity, Gemini, Copilot)
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /begleiter/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /begleiter/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /begleiter/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /begleiter/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /begleiter/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /begleiter/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /begleiter/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /begleiter/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /begleiter/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /begleiter/
+
+Sitemap: https://klarheit-am-berg.de/sitemap.xml
