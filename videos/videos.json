@@ -1,7 +1,13 @@
 {
  "Coaching": [
   {
-   "datei": "coaching-zuhoeren-veraendert-gespraeche",
+   "datei": "coaching-grenzen-erkennen-und-respektieren",
+   "titel": "Grenzen erkennen und respektieren",
+   "quer": false,
+   "dauer": 56
+  },
+  {
+   "datei": "coaching-zuhoren-verandert-gesprache",
    "titel": "Zuhören verändert Gespräche",
    "quer": false,
    "dauer": 67
