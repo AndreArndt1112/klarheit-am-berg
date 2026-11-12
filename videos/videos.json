@@ -1,6 +1,12 @@
 {
  "Coaching": [
   {
+   "datei": "coaching-man-muss-nicht-immer-funktionieren",
+   "titel": "Man muss nicht immer funktionieren",
+   "quer": false,
+   "dauer": 61
+  },
+  {
    "datei": "coaching-grenzen-erkennen-und-respektieren",
    "titel": "Grenzen erkennen und respektieren",
    "quer": false,
