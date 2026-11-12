@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>André Arndt – Klarheit am Berg</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f4f6f4;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 380px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .header {
+    background: #1e3d2a;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .logo {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .title {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  .body {
+    padding: 1.5rem;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+
+  .contact-row:last-of-type {
+    border-bottom: none;
+  }
+
+  .icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #eef2ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .contact-label {
+    font-size: 0.72rem;
+    color: #888;
+    margin-bottom: 0.1rem;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  .btn-save {
+    display: block;
+    width: 100%;
+    background: #1e3d2a;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1.25rem;
+    transition: background 0.2s;
+  }
+
+  .btn-save:hover { background: #2a5239; }
+
+  .footer {
+    text-align: center;
+    padding: 1rem 1.5rem 1.5rem;
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="logo">Klarheit am Berg</div>
+    <div class="name">André Arndt</div>
+    <div class="title">IHK Business Coach<br>Staatl. gepr. Bergwanderführer</div>
+  </div>
+
+  <div class="body">
+
+    <a class="contact-row" href="tel:+4917122444548">
+      <div class="icon">📞</div>
+      <div>
+        <div class="contact-label">Mobil</div>
+        <div class="contact-value">+49 171 2244458</div>
+      </div>
+    </a>
+
+    <a class="contact-row" href="mailto:andrearndt1@gmx.de">
+      <div class="icon">✉️</div>
+      <div>
+        <div class="contact-label">E-Mail</div>
+        <div class="contact-value">andrearndt1@gmx.de</div>
+      </div>
+    </a>
+
+    <a class="contact-row" href="https://klarheit-am-berg.de" target="_blank">
+      <div class="icon">🌐</div>
+      <div>
+        <div class="contact-label">Website</div>
+        <div class="contact-value">klarheit-am-berg.de</div>
+      </div>
+    </a>
+
+    <a class="contact-row" href="#">
+      <div class="icon">📍</div>
+      <div>
+        <div class="contact-label">Ort</div>
+        <div class="contact-value">Reit im Winkl</div>
+      </div>
+    </a>
+
+    <a class="btn-save" href="/andre-arndt.vcf" download>
+      Kontakt speichern
+    </a>
+
+  </div>
+
+  <div class="footer">klarheit-am-berg.de</div>
+</div>
+
+</body>
+</html>
