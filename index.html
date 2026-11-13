@@ -1359,39 +1359,26 @@
         /* ===== RESPONSIVE ===== */
 
 
-        /* ===== MUSIKKNOPF, IMMER SICHTBAR ===== */
-        .musikknopf {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            z-index: 900;
+        /* ===== LIED ABSPIELEN: NAVIGATION UND STARTBILD ===== */
+        .nav-musik {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem 1.1rem 0.6rem 0.7rem;
+            gap: 0.5rem;
+            background: none;
             border: 0;
-            border-radius: 40px;
-            background: var(--green-dark);
-            color: #fff;
             cursor: pointer;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.3);
             font-family: inherit;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            opacity: 0;
-            transform: translateY(14px);
-            pointer-events: none;
-            transition: opacity .4s ease, transform .4s ease, background .25s ease;
+            color: var(--green);
+            padding: 0.35rem 0.5rem;
+            border-radius: 30px;
+            transition: background .2s ease;
         }
-        .musikknopf.sichtbar {
-            opacity: 1;
-            transform: none;
-            pointer-events: auto;
-        }
-        .musikknopf:hover { background: var(--green); }
-        .musikknopf-symbol {
-            width: 30px;
-            height: 30px;
+        .nav-musik:hover { background: rgba(45,90,61,0.07); }
+        .nav-musik-symbol {
+            width: 32px;
+            height: 32px;
             flex-shrink: 0;
             border-radius: 50%;
             background: var(--amber);
@@ -1399,26 +1386,41 @@
             align-items: center;
             justify-content: center;
         }
-        .musikknopf-symbol svg { width: 15px; height: 15px; fill: #fff; display: block; }
-        .musikknopf-text { white-space: nowrap; }
-        .musikknopf-text small {
-            display: block;
-            font-weight: 400;
-            font-size: 0.72rem;
-            color: rgba(255,255,255,0.6);
-            letter-spacing: 0.03em;
+        .nav-musik-symbol svg { width: 14px; height: 14px; fill: #fff; display: block; }
+        .nav-musik-text { white-space: nowrap; }
+        @media (max-width: 900px) { .nav-musik-text { display: none; } }
+
+        .hero-musik {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.9rem;
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.92);
+            text-align: left;
         }
-        @media (max-width: 560px) {
-            /* am Handy nur das runde Symbol, sonst verdeckt der Knopf den Text */
-            .musikknopf {
-                right: 14px;
-                bottom: 14px;
-                padding: 0.45rem;
-                gap: 0;
-            }
-            .musikknopf-text { display: none; }
-            .musikknopf-symbol { width: 38px; height: 38px; }
-            .musikknopf-symbol svg { width: 18px; height: 18px; }
+        .hero-musik:hover { color: #fff; }
+        .hero-musik-symbol {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--amber);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(212,137,26,0.5);
+        }
+        .hero-musik-symbol svg { width: 18px; height: 18px; fill: #fff; display: block; }
+        .hero-musik small {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
         }
 
         /* ===== LIED ===== */
@@ -1728,6 +1730,12 @@
                 <li><a href="#lesachtal">Lesachtal</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
+            <button class="nav-musik" id="navMusik" type="button" aria-label="Lied abspielen">
+                <span class="nav-musik-symbol" id="navMusikSymbol">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                <span class="nav-musik-text" id="navMusikText">Lied</span>
+            </button>
             <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
                 <span></span>
                 <span></span>
@@ -1762,6 +1770,12 @@
                         <a href="#wege" class="btn btn-primary">Coaching entdecken</a>
                         <a href="#erleben" class="btn btn-outline">Wandererlebnisse entdecken</a>
                     </div>
+                    <button class="hero-musik" id="heroMusik" type="button" aria-label="Lied abspielen">
+                        <span class="hero-musik-symbol" id="heroMusikSymbol">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                        </span>
+                        <span id="heroMusikText">H&ouml;r das Lied zu dieser Seite<small>Dein n&auml;chster Schritt &middot; 3:12</small></span>
+                    </button>
                     <a href="https://wa.me/491712244458?text=Hallo%20André%2C%20ich%20interessiere%20mich%20für%20ein%20Erstgespräch." target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:rgba(255,255,255,0.9);margin-top:0.75rem;">
                         <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 2px 8px rgba(37,211,102,0.5);flex-shrink:0;">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.859L.057 23.428a.75.75 0 0 0 .921.921l5.569-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.523-5.188-1.433l-.372-.22-3.862 1.018 1.018-3.862-.22-.372A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -2480,14 +2494,6 @@
         </div>
     </div>
 
-    <!-- ===== MUSIKKNOPF ===== -->
-    <button class="musikknopf" id="musikknopf" type="button" aria-label="Lied abspielen">
-        <span class="musikknopf-symbol" id="musikknopfSymbol">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        </span>
-        <span class="musikknopf-text">Dein n&auml;chster Schritt<small>Lied anh&ouml;ren</small></span>
-    </button>
-
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
@@ -2631,48 +2637,43 @@
             });
         });
 
-        // ===== Musikknopf: steuert denselben Abspieler wie im Lied-Abschnitt =====
+        // ===== Lied abspielen: Navigation und Startbild steuern denselben Abspieler =====
         (function () {
             var ton = document.querySelector('.lied-player');
-            var knopf = document.getElementById('musikknopf');
-            var symbol = document.getElementById('musikknopfSymbol');
-            var abschnitt = document.getElementById('lied');
-            if (!ton || !knopf) return;
+            if (!ton) return;
 
             var ABSPIELEN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
             var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
 
-            knopf.addEventListener('click', function () {
-                if (ton.paused) { ton.play(); } else { ton.pause(); }
+            var knoepfe = [
+                { knopf: document.getElementById('navMusik'),
+                  symbol: document.getElementById('navMusikSymbol'),
+                  text: document.getElementById('navMusikText'),
+                  aus: 'Lied', an: 'l\u00e4uft' },
+                { knopf: document.getElementById('heroMusik'),
+                  symbol: document.getElementById('heroMusikSymbol'),
+                  text: document.getElementById('heroMusikText'),
+                  aus: 'H\u00f6r das Lied zu dieser Seite<small>Dein n\u00e4chster Schritt \u00b7 3:12</small>',
+                  an: 'Das Lied l\u00e4uft<small>Antippen zum Anhalten</small>' }
+            ].filter(function (e) { return e.knopf; });
+
+            knoepfe.forEach(function (e) {
+                e.knopf.addEventListener('click', function () {
+                    if (ton.paused) { ton.play(); } else { ton.pause(); }
+                });
             });
 
             function stand() {
                 var laeuft = !ton.paused && !ton.ended;
-                symbol.innerHTML = laeuft ? PAUSE : ABSPIELEN;
-                knopf.setAttribute('aria-label', laeuft ? 'Lied anhalten' : 'Lied abspielen');
-                knopf.querySelector('small').textContent = laeuft ? 'l\u00e4uft \u2014 antippen zum Anhalten' : 'Lied anh\u00f6ren';
+                knoepfe.forEach(function (e) {
+                    e.symbol.innerHTML = laeuft ? PAUSE : ABSPIELEN;
+                    e.text.innerHTML = laeuft ? e.an : e.aus;
+                    e.knopf.setAttribute('aria-label', laeuft ? 'Lied anhalten' : 'Lied abspielen');
+                });
             }
             ton.addEventListener('play', stand);
             ton.addEventListener('pause', stand);
             ton.addEventListener('ended', stand);
-
-            // Knopf erst zeigen, wenn der Hero vorbei ist; im Lied-Abschnitt selbst ausblenden
-            var imAbschnitt = false, gescrollt = false;
-            function pruefen() {
-                if (gescrollt && !imAbschnitt) { knopf.classList.add('sichtbar'); }
-                else { knopf.classList.remove('sichtbar'); }
-            }
-            window.addEventListener('scroll', function () {
-                gescrollt = window.scrollY > window.innerHeight * 0.6;
-                pruefen();
-            }, { passive: true });
-
-            if (abschnitt && 'IntersectionObserver' in window) {
-                new IntersectionObserver(function (eintraege) {
-                    imAbschnitt = eintraege[0].isIntersecting;
-                    pruefen();
-                }, { threshold: 0.25 }).observe(abschnitt);
-            }
             stand();
         })();
     </script>
