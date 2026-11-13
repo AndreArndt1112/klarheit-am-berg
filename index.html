@@ -1357,6 +1357,56 @@
         }
 
         /* ===== RESPONSIVE ===== */
+
+        /* ===== LIED ===== */
+        .lied-section {
+            background: var(--green-dark);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .lied-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .lied-section .section-label { color: var(--amber-light); }
+        .lied-section h2 { color: #fff; margin-bottom: 1rem; }
+        .lied-text {
+            color: rgba(255,255,255,0.78);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .lied-zeile {
+            font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+            line-height: 1.7;
+            color: #fff;
+            font-weight: 300;
+            margin-bottom: 2.25rem;
+        }
+        .lied-zeile span {
+            display: block;
+            color: var(--amber-light);
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 0.9rem;
+        }
+        .lied-player {
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            display: block;
+            filter: invert(1) hue-rotate(180deg) saturate(0.6);
+            border-radius: 30px;
+        }
+        .lied-hinweis {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
         /* ===== ZWEI WEGE ===== */
         .wege-section {
             background: var(--cream-dark);
@@ -1846,6 +1896,29 @@
     <div class="panorama-divider">
         <img src="images/winter_see.jpg" alt="Winterlandschaft bei Reit im Winkl" loading="lazy">
     </div>
+
+    <!-- ===== LIED ===== -->
+    <section class="lied-section" id="lied">
+        <div class="container">
+            <div class="lied-inner">
+                <span class="section-label fade-in">Musik</span>
+                <h2 class="fade-in">Dein n&auml;chster Schritt</h2>
+                <p class="lied-text fade-in">
+                    Ein Lied, das ich f&uuml;r diese Seite gemacht habe.
+                    Drei Minuten dar&uuml;ber, warum man nicht alles wissen muss, bevor man losgeht.
+                </p>
+                <p class="lied-zeile fade-in">
+                    &bdquo;Du musst nicht wissen, wohin es f&uuml;hrt &ndash;
+                    nur sp&uuml;ren, was dich wirklich f&uuml;hrt.&ldquo;
+                </p>
+                <audio class="lied-player fade-in" controls preload="none"
+                       src="musik/dein-naechster-schritt.mp3">
+                    Dein Browser kann diese Audiodatei nicht abspielen.
+                </audio>
+                <p class="lied-hinweis fade-in">3:12 &middot; Musik f&uuml;r Klarheit am Berg, erstellt mit Suno</p>
+            </div>
+        </div>
+    </section>
 
     <!-- VIDEOS-ANFANG (wird automatisch erzeugt) -->
 
