@@ -1,6 +1,12 @@
 {
  "Coaching": [
   {
+   "datei": "coaching-einfach-mal-innehalten",
+   "titel": "Einfach mal innehalten",
+   "quer": false,
+   "dauer": 55
+  },
+  {
    "datei": "coaching-man-muss-nicht-immer-funktionieren",
    "titel": "Man muss nicht immer funktionieren",
    "quer": false,
