@@ -112,5 +112,13 @@
   "text": "Und zum Schluss",
   "alt": "Und zum Schluss",
   "quer": false
+ },
+ {
+  "datei": "blick-von-der-terrasse-ins-lesachtal",
+  "text": "Blick von der Terrasse ins Lesachtal",
+  "alt": "Zwei Gäste auf der Terrasse des Alpenhotel Wanderniki mit Blick ins Lesachtal",
+  "quer": true,
+  "fremd": true,
+  "quelle": "Alpenhotel Wanderniki"
  }
 ]
