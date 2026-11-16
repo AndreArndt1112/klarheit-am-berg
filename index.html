@@ -1649,7 +1649,110 @@
   .hero-film-start::after { width: 54px; height: 54px; background-size: 24px; }
   .hero-film-satz { margin-top: 0.55rem; font-size: 0.95rem; line-height: 1.4; }
 }
-</style>
+
+        /* ===== ENTSCHLACKT (17.11.2026) ===== */
+        section { padding: 4rem 0; }
+        @media (max-width: 768px) { section { padding: 2.75rem 0; } }
+
+
+        /* Eingeklappte Hinweise und Textteile */
+        .hinweis-klapp, .mehr-text { margin-top: 1.5rem; }
+        .hinweis-klapp summary, .mehr-text summary {
+            cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--green);
+            list-style: none; display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.35rem 0;
+        }
+        .hinweis-klapp summary::-webkit-details-marker, .mehr-text summary::-webkit-details-marker { display: none; }
+        .hinweis-klapp summary::before, .mehr-text summary::before { content: "+"; font-size: 1.1rem; line-height: 1; }
+        .hinweis-klapp[open] summary::before, .mehr-text[open] summary::before { content: "–"; }
+        .hinweis-klapp .hinweis { margin-top: 0.75rem; }
+        .mehr-text { margin-bottom: 1rem; }
+
+        /* Videos: erst eine Auswahl */
+        .video-grid-kurz .video-karte:nth-child(n+4) { display: none; }
+        @media (max-width: 900px) { .video-grid-kurz .video-karte:nth-child(4) { display: block; } }
+        .mehr-knopf {
+            display: block; margin: 1.75rem auto 0; padding: 0.7rem 1.6rem;
+            background: transparent; border: 1.5px solid var(--green); border-radius: 999px;
+            color: var(--green); font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+        .mehr-knopf:hover { background: var(--green); color: #fff; }
+
+        /* Weniger Platzfresser */
+        .pain-card { padding: 1.25rem 1.5rem; }
+        .results-list { gap: 0.6rem; }
+        .coop-card img { height: 150px; }
+        .teaser-card img { min-height: 180px; }
+        @media (max-width: 768px) {
+            .coop-card { padding: 1.25rem; }
+            .coop-card img { height: 130px; }
+            .teaser-text { padding: 1.4rem; }
+            .about-image { max-width: 220px; }
+        }
+
+    
+        /* ===== ENTSCHLACKT, zweiter Durchgang ===== */
+        @media (max-width: 768px) { section { padding: 2.25rem 0; } }
+
+        /* Kooperationen: schmale Zeilen statt grosser Karten */
+        .coop-card { display: grid; grid-template-columns: 110px 1fr; gap: 1.1rem; align-items: center; padding: 1.1rem; }
+        .coop-card img { height: 110px; width: 110px; margin-bottom: 0; align-self: center; }
+        .coop-card h3 { margin-bottom: 0.35rem; font-size: 1.05rem; }
+        .coop-card p { margin-bottom: 0.4rem; font-size: 0.9rem; line-height: 1.5; }
+        .coop-grid { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.75rem; }
+        @media (max-width: 768px) {
+            .coop-card { grid-template-columns: 84px 1fr; gap: 0.9rem; padding: 0.9rem; }
+            .coop-card img { height: 84px; width: 84px; }
+            .coop-card p { font-size: 0.85rem; }
+        }
+
+        /* Kennst du das: schlanke Zeilen */
+        .pain-grid { gap: 0.7rem; margin-top: 1.75rem; }
+        .pain-card { padding: 0.9rem 1.2rem; }
+        .pain-card p { font-size: 0.97rem; line-height: 1.5; }
+
+        /* Was moeglich ist: enger */
+        .results-list { margin-top: 1.75rem; gap: 0.5rem; }
+        .result-item { padding: 0.65rem 0.9rem; }
+        .result-item p { font-size: 0.97rem; }
+
+        /* Fragen: erst eine Auswahl */
+        .faq-kurz .faq-item:nth-child(n+6) { display: none; }
+
+        /* Ueber mich, Lesachtal, Videos: enger */
+        .about-image { max-width: 190px; }
+        .fotoreihe { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        @media (max-width: 560px) { .fotoreihe { grid-template-columns: repeat(4, 1fr); gap: 7px; } }
+        .video-grid { margin-top: 1.75rem; }
+        .faq-list, .accordion { margin-top: 1.75rem; }
+        .teaser-card { margin-top: 1.75rem; }
+
+    
+        /* Kooperationen: Bild links, Text sauber rechts daneben */
+        .coop-card { display: grid; grid-template-columns: 110px 1fr; column-gap: 1.1rem; row-gap: 0.25rem;
+                     align-items: start; align-content: center; padding: 1.1rem; }
+        .coop-card img { grid-column: 1; grid-row: 1 / span 3; align-self: center; width: 110px; height: 110px; margin: 0; }
+        .coop-card h3 { grid-column: 2; grid-row: 1; margin: 0; font-size: 1.05rem; }
+        .coop-card p { grid-column: 2; grid-row: 2; margin: 0; font-size: 0.9rem; line-height: 1.5; }
+        .coop-card .coop-meta { grid-column: 2; grid-row: 3; }
+        @media (max-width: 768px) {
+            .coop-card { grid-template-columns: 92px 1fr; column-gap: 0.9rem; padding: 0.95rem; }
+            .coop-card img { width: 92px; height: 92px; }
+            .coop-card p { font-size: 0.86rem; }
+            .coop-card .coop-meta { font-size: 0.8rem; }
+        }
+
+    
+        /* Bergwanderführer-Abzeichen im Startbild */
+        .hero-abzeichen-einzeln {
+            display: block; width: 78px; height: 78px; border-radius: 50%;
+            object-fit: cover; margin-bottom: 1rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.35);
+        }
+        @media (max-width: 900px) { .hero-abzeichen-einzeln { width: 58px; height: 58px; margin-bottom: 0.6rem; } }
+
+    </style>
 </head>
 <body>
 
@@ -1692,13 +1795,10 @@
         <div class="container hero-content">
             <div class="hero-inner">
                 <div class="hero-text">
+                    <img src="images/bergwanderfuehrer-kaernten.jpg" alt="Staatlich geprüfter Bergwanderführer Kärnten" class="hero-abzeichen-einzeln" width="200" height="200">
                     <h1>Menschen begleiten.<br>Wege eröffnen.</h1>
                     <p>Manchmal braucht es Abstand vom Alltag, Bewegung und ein gutes Gespräch, um die eigene Situation neu zu betrachten. Manchmal braucht es einfach einen besonderen Tag draußen. Beides hat bei Klarheit am Berg seinen Platz.</p>
-                    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;">
-                        <a href="#wege" class="btn btn-primary">Coaching entdecken</a>
-                        <a href="#erleben" class="btn btn-outline">Wandererlebnisse entdecken</a>
-                    </div>
-                    <a href="https://wa.me/491712244458?text=Hallo%20André%2C%20ich%20interessiere%20mich%20für%20ein%20Erstgespräch." target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:rgba(255,255,255,0.9);margin-top:0.75rem;">
+                    <a href="https://wa.me/491712244458?text=Hallo%20André%2C%20ich%20interessiere%20mich%20für%20ein%20Erstgespräch." target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:rgba(255,255,255,0.9);margin-top:1.5rem;">
                         <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 2px 8px rgba(37,211,102,0.5);flex-shrink:0;">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.859L.057 23.428a.75.75 0 0 0 .921.921l5.569-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.523-5.188-1.433l-.372-.22-3.862 1.018 1.018-3.862-.22-.372A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
                         </span>
@@ -1706,10 +1806,6 @@
                     </a>
                 </div>
                 <div class="hero-neben">
-                    <div class="hero-abzeichen">
-                        <img src="images/bergwanderfuehrer-kaernten.jpg" alt="Staatlich geprüfter Bergwanderführer Kärnten" class="hero-badge-left">
-                        <img src="images/voebs-logo.png" alt="VÖBS – Verband der Österreichischen Berg- und Skiführer" style="width:90px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.3));">
-                    </div>
                     <div class="hero-film">
                         <div class="hero-film-buehne">
                             <img src="film/klarheit-am-berg-film.jpg" alt="Andr&eacute; Arndt geht an einem Novembermorgen &uuml;ber ein trockenes Flussbett den Bergen entgegen" width="1600" height="900" loading="eager">
@@ -1874,9 +1970,10 @@
                     <p>Die Erfahrung, mit deinen Fragen nicht allein zu sein</p>
                 </div>
             </div>
-            <div class="hinweis fade-in">
+            <details class="hinweis-klapp fade-in"><summary>Was ich dabei zusichern kann</summary>
+            <div class="hinweis">
                 Das sind die Ziele, auf die wir gemeinsam hinarbeiten — keine zugesicherten Ergebnisse. Wie viel sich bewegt, hängt von deinem Thema, von dir und auch vom Tag ab. Coaching ist keine Therapie und ersetzt keine medizinische oder psychotherapeutische Behandlung.
-            </div>
+            </div></details>
         </div>
     </section>
 
@@ -1899,9 +1996,11 @@
                     <div class="about-quote">
                         "Irgendwann habe ich begriffen: Es reicht. Ab jetzt lebe ich wie ich will. Bewusst, selbstbestimmt, auf meinem Weg."
                     </div>
+                    <details class="mehr-text"><summary>Wie es dazu kam</summary>
                     <p style="margin-bottom: 1rem; color: var(--text-light);">
                         Bei einer großen Veranstaltung mit über 500 Menschen — viele davon Gründer und Unternehmer — hörte ich immer wieder dieselben Fragen: <em>Wie gehe ich den nächsten Schritt? Mein Unternehmen macht sechsstellige Umsätze und ich bin völlig fertig.</em> In dem Moment wurde mir klar: Es gibt so viele Menschen, denen man die Hand reichen muss. Genau das will ich tun. Und wenn du das Gefühl hast, dass du diese Unterstützung brauchst — klopf bei mir an.
                     </p>
+                    </details>
                     <div class="about-certs">
                         <span class="cert-badge">
                             <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -2042,6 +2141,24 @@
 })();
 </script>
 <!-- VIDEOS-ENDE -->
+<script>
+(function(){
+  var g = document.querySelector("#videos .video-grid");
+  if (!g) return;
+  var anzahl = g.children.length;
+  if (anzahl <= 4) return;
+  g.classList.add("video-grid-kurz");
+  var k = document.createElement("button");
+  k.type = "button"; k.className = "mehr-knopf";
+  k.textContent = "Alle " + anzahl + " Videos ansehen";
+  k.addEventListener("click", function(){
+    var kurz = g.classList.toggle("video-grid-kurz");
+    k.textContent = kurz ? "Alle " + anzahl + " Videos ansehen" : "Weniger zeigen";
+    if (kurz) g.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+  g.parentNode.appendChild(k);
+})();
+</script>
 
     <!-- ===== ANGEBOTE ===== -->
     <section class="offers-section" id="offers">
@@ -2135,9 +2252,10 @@
                     </div>
                 </div>
             </div>
-            <div class="hinweis fade-in">
+            <details class="hinweis-klapp fade-in"><summary>Hinweis zu den Preisen</summary>
+            <div class="hinweis">
                 Alle Preise verstehen sich als Richtwerte pro Person und werden im Erstgespräch verbindlich besprochen. Für mehrtägige Formate und Gruppenangebote gilt der jeweils zum Buchungszeitpunkt vereinbarte Preis.
-            </div>
+            </div></details>
         </div>
     </section>
 
@@ -2307,6 +2425,25 @@
             </div>
         </div>
     </section>
+
+    <script>
+(function(){
+  var l = document.querySelector("#faq .faq-list");
+  if (!l) return;
+  var anzahl = l.children.length;
+  if (anzahl <= 5) return;
+  l.classList.add("faq-kurz");
+  var k = document.createElement("button");
+  k.type = "button"; k.className = "mehr-knopf";
+  k.textContent = "Alle " + anzahl + " Fragen ansehen";
+  k.addEventListener("click", function(){
+    var kurz = l.classList.toggle("faq-kurz");
+    k.textContent = kurz ? "Alle " + anzahl + " Fragen ansehen" : "Weniger zeigen";
+    if (kurz) l.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+  l.parentNode.appendChild(k);
+})();
+</script>
 
     <!-- ===== KONTAKT ===== -->
     <section class="contact-section" id="contact">
