@@ -1360,122 +1360,8 @@
 
 
         /* ===== LIED ABSPIELEN: NAVIGATION UND STARTBILD ===== */
-        .nav-musik {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: none;
-            border: 0;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--green);
-            padding: 0.35rem 0.5rem;
-            border-radius: 30px;
-            transition: background .2s ease;
-        }
-        .nav-musik:hover { background: rgba(45,90,61,0.07); }
-        .nav-musik-symbol {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: var(--amber);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .nav-musik-symbol svg { width: 14px; height: 14px; fill: #fff; display: block; }
-        .nav-musik-text { white-space: nowrap; }
-        @media (max-width: 900px) { .nav-musik-text { display: none; } }
 
-        .hero-musik {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-top: 0.9rem;
-            background: none;
-            border: 0;
-            padding: 0;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 1rem;
-            color: rgba(255,255,255,0.92);
-            text-align: left;
-        }
-        .hero-musik:hover { color: #fff; }
-        .hero-musik-symbol {
-            width: 42px;
-            height: 42px;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: var(--amber);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(212,137,26,0.5);
-        }
-        .hero-musik-symbol svg { width: 18px; height: 18px; fill: #fff; display: block; }
-        .hero-musik small {
-            display: block;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
-        }
 
-        /* ===== LIED ===== */
-        .lied-section {
-            background: var(--green-dark);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        .lied-inner {
-            max-width: 760px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .lied-section .section-label { color: var(--amber-light); }
-        .lied-section h2 { color: #fff; margin-bottom: 1rem; }
-        .lied-text {
-            color: rgba(255,255,255,0.78);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        .lied-zeile {
-            font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-            line-height: 1.7;
-            color: #fff;
-            font-weight: 300;
-            margin-bottom: 2.25rem;
-        }
-        .lied-zeile span {
-            display: block;
-            color: var(--amber-light);
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-top: 0.9rem;
-        }
-        .lied-player {
-            width: 100%;
-            max-width: 520px;
-            margin: 0 auto;
-            display: block;
-            filter: invert(1) hue-rotate(180deg) saturate(0.6);
-            border-radius: 30px;
-        }
-        .lied-hinweis {
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* ===== ZWEI WEGE ===== */
-        .wege-section {
-            background: var(--cream-dark);
-        }
         .wege-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1715,6 +1601,54 @@
 @media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .video-titel { padding: 0.7rem 0.8rem 0.9rem; font-size: 14px; } }
+
+
+/* ===== FILM IM HERO ===== */
+.hero-neben { display: flex; flex-direction: column; align-items: center; gap: 1rem; flex-shrink: 0; width: 300px; }
+.hero-abzeichen { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.hero-film { width: 100%; }
+.hero-film-buehne {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  border-radius: 14px; overflow: hidden; background: #1e3d2a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.42); border: 2px solid rgba(255,255,255,0.35);
+}
+.hero-film-buehne img, .hero-film-buehne video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-film-buehne img { transition: transform .6s ease; }
+.hero-film-buehne:hover img { transform: scale(1.05); }
+.hero-film-start {
+  position: absolute; inset: 0; border: 0; padding: 0; cursor: pointer;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.32));
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-film-start::after {
+  content: ""; width: 58px; height: 58px; border-radius: 50%;
+  background: rgba(255,255,255,0.95) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232d5a3d'><path d='M8 5v14l11-7z'/></svg>") no-repeat center / 26px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.45); transition: transform .3s ease;
+}
+.hero-film-start:hover::after { transform: scale(1.12); }
+.hero-film-start:focus-visible { outline: 3px solid #d4891a; outline-offset: -3px; }
+.hero-film-dauer {
+  position: absolute; right: 9px; bottom: 9px; background: rgba(0,0,0,0.68); color: #fff;
+  font-size: 11px; padding: 2px 8px; border-radius: 10px; pointer-events: none;
+}
+.hero-film-satz {
+  margin-top: 0.7rem; font-size: 1rem; font-weight: 600; line-height: 1.5; text-align: center;
+  color: rgba(255,255,255,0.92); text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+.hero-film-satz b { display: block; font-weight: 700; font-size: 1.02rem; margin-bottom: 0.15rem; }
+@media (max-width: 900px) {
+  .hero-inner { flex-direction: column; align-items: stretch; gap: 0.9rem; }
+  .hero-content { padding: 1.2rem 0 1.6rem; }
+  .hero h1 { font-size: 2rem; margin-bottom: 0.8rem; }
+  .hero-text > p { font-size: 0.97rem; line-height: 1.6; }
+  /* Am Handy nach oben: der Film soll ohne Scrollen zu sehen sein */
+  .hero-neben { order: -1; width: 100%; max-width: 300px; margin: 0 auto 0.4rem; gap: 0.7rem; }
+  .hero-abzeichen { gap: 0.9rem; }
+  .hero-abzeichen .hero-badge-left { width: 76px; height: 76px; margin-top: 0; }
+  .hero-abzeichen img[src*="voebs"] { width: 62px; }
+  .hero-film-start::after { width: 54px; height: 54px; background-size: 24px; }
+  .hero-film-satz { margin-top: 0.55rem; font-size: 0.95rem; line-height: 1.4; }
+}
 </style>
 </head>
 <body>
@@ -1730,12 +1664,6 @@
                 <li><a href="#lesachtal">Lesachtal</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
-            <button class="nav-musik" id="navMusik" type="button" aria-label="Lied abspielen">
-                <span class="nav-musik-symbol" id="navMusikSymbol">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                </span>
-                <span class="nav-musik-text" id="navMusikText">Lied</span>
-            </button>
             <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
                 <span></span>
                 <span></span>
@@ -1770,12 +1698,6 @@
                         <a href="#wege" class="btn btn-primary">Coaching entdecken</a>
                         <a href="#erleben" class="btn btn-outline">Wandererlebnisse entdecken</a>
                     </div>
-                    <button class="hero-musik" id="heroMusik" type="button" aria-label="Lied abspielen">
-                        <span class="hero-musik-symbol" id="heroMusikSymbol">
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                        </span>
-                        <span id="heroMusikText">H&ouml;r das Lied zu dieser Seite<small>Dein n&auml;chster Schritt &middot; 3:12</small></span>
-                    </button>
                     <a href="https://wa.me/491712244458?text=Hallo%20André%2C%20ich%20interessiere%20mich%20für%20ein%20Erstgespräch." target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:rgba(255,255,255,0.9);margin-top:0.75rem;">
                         <span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 2px 8px rgba(37,211,102,0.5);flex-shrink:0;">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.122 1.523 5.859L.057 23.428a.75.75 0 0 0 .921.921l5.569-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.523-5.188-1.433l-.372-.22-3.862 1.018 1.018-3.862-.22-.372A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -1783,13 +1705,43 @@
                         WhatsApp
                     </a>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;flex-shrink:0;">
-                    <img src="images/bergwanderfuehrer-kaernten.jpg" alt="Staatlich geprüfter Bergwanderführer Kärnten" class="hero-badge-left">
-                    <img src="images/voebs-logo.png" alt="VÖBS – Verband der Österreichischen Berg- und Skiführer" style="width:90px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.3));">
+                <div class="hero-neben">
+                    <div class="hero-abzeichen">
+                        <img src="images/bergwanderfuehrer-kaernten.jpg" alt="Staatlich geprüfter Bergwanderführer Kärnten" class="hero-badge-left">
+                        <img src="images/voebs-logo.png" alt="VÖBS – Verband der Österreichischen Berg- und Skiführer" style="width:90px;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.3));">
+                    </div>
+                    <div class="hero-film">
+                        <div class="hero-film-buehne">
+                            <img src="film/klarheit-am-berg-film.jpg" alt="Andr&eacute; Arndt geht an einem Novembermorgen &uuml;ber ein trockenes Flussbett den Bergen entgegen" width="1600" height="900" loading="eager">
+                            <button class="hero-film-start" id="filmStart" type="button" aria-label="Film abspielen: Veränderung beginnt mit dem ersten Schritt"></button>
+                            <span class="hero-film-dauer">3:12</span>
+                        </div>
+                        <p class="hero-film-satz">
+                            Ver&auml;nderung beginnt mit dem ersten Schritt.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+    (function(){
+      var k = document.getElementById("filmStart");
+      if (!k) return;
+      k.addEventListener("click", function(){
+        var buehne = k.parentNode;
+        var v = document.createElement("video");
+        v.src = "film/klarheit-am-berg-film.mp4";
+        v.controls = true; v.preload = "auto";
+        v.playsInline = true; v.setAttribute("playsinline","");
+        v.poster = "film/klarheit-am-berg-film.jpg";
+        buehne.innerHTML = ""; buehne.appendChild(v);
+        var ab = v.play();
+        if (ab && ab.catch) { ab.catch(function(){ v.muted = true; v.play(); }); }
+      });
+    })();
+    </script>
 
     <!-- ===== ZWEI WEGE ===== -->
     <section class="wege-section" id="wege">
@@ -1974,28 +1926,6 @@
         <img src="images/winter_see.jpg" alt="Winterlandschaft bei Reit im Winkl" loading="lazy">
     </div>
 
-    <!-- ===== LIED ===== -->
-    <section class="lied-section" id="lied">
-        <div class="container">
-            <div class="lied-inner">
-                <span class="section-label fade-in">Musik</span>
-                <h2 class="fade-in">Dein n&auml;chster Schritt</h2>
-                <p class="lied-text fade-in">
-                    Ein Lied, das ich f&uuml;r diese Seite gemacht habe.
-                    Drei Minuten dar&uuml;ber, warum man nicht alles wissen muss, bevor man losgeht.
-                </p>
-                <p class="lied-zeile fade-in">
-                    &bdquo;Du musst nicht wissen, wohin es f&uuml;hrt &ndash;
-                    nur sp&uuml;ren, was dich wirklich f&uuml;hrt.&ldquo;
-                </p>
-                <audio class="lied-player fade-in" controls preload="none"
-                       src="musik/dein-naechster-schritt.mp3">
-                    Dein Browser kann diese Audiodatei nicht abspielen.
-                </audio>
-                <p class="lied-hinweis fade-in">3:12 &middot; Musik f&uuml;r Klarheit am Berg, erstellt mit Suno</p>
-            </div>
-        </div>
-    </section>
 
     <!-- VIDEOS-ANFANG (wird automatisch erzeugt) -->
 
@@ -2653,45 +2583,6 @@
             });
         });
 
-        // ===== Lied abspielen: Navigation und Startbild steuern denselben Abspieler =====
-        (function () {
-            var ton = document.querySelector('.lied-player');
-            if (!ton) return;
-
-            var ABSPIELEN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-            var PAUSE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
-
-            var knoepfe = [
-                { knopf: document.getElementById('navMusik'),
-                  symbol: document.getElementById('navMusikSymbol'),
-                  text: document.getElementById('navMusikText'),
-                  aus: 'Lied', an: 'l\u00e4uft' },
-                { knopf: document.getElementById('heroMusik'),
-                  symbol: document.getElementById('heroMusikSymbol'),
-                  text: document.getElementById('heroMusikText'),
-                  aus: 'H\u00f6r das Lied zu dieser Seite<small>Dein n\u00e4chster Schritt \u00b7 3:12</small>',
-                  an: 'Das Lied l\u00e4uft<small>Antippen zum Anhalten</small>' }
-            ].filter(function (e) { return e.knopf; });
-
-            knoepfe.forEach(function (e) {
-                e.knopf.addEventListener('click', function () {
-                    if (ton.paused) { ton.play(); } else { ton.pause(); }
-                });
-            });
-
-            function stand() {
-                var laeuft = !ton.paused && !ton.ended;
-                knoepfe.forEach(function (e) {
-                    e.symbol.innerHTML = laeuft ? PAUSE : ABSPIELEN;
-                    e.text.innerHTML = laeuft ? e.an : e.aus;
-                    e.knopf.setAttribute('aria-label', laeuft ? 'Lied anhalten' : 'Lied abspielen');
-                });
-            }
-            ton.addEventListener('play', stand);
-            ton.addEventListener('pause', stand);
-            ton.addEventListener('ended', stand);
-            stand();
-        })();
     </script>
 </body>
 </html>
