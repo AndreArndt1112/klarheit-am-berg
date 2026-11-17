@@ -55,6 +55,9 @@ max-width: 1100px; margin: 0 auto; padding: 0 24px;
 display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { color: var(--white); font-weight: 700; font-size: 19px; text-decoration: none; }
+
+        .nav-logo img { display: block; height: 44px; width: auto; }
+        @media (max-width: 768px) { .nav-logo img { height: 36px; } }
 .nav-logo span { color: var(--amber-light); }
 .nav-links { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
 .nav-links a { color: var(--white); text-decoration: none; font-size: 14px; font-weight: 500; opacity: 0.9; }
@@ -257,7 +260,7 @@ display: flex; align-items: center; justify-content: space-between; margin-botto
 
 <nav class="nav">
 <div class="nav-inner">
-<a href="index.html" class="nav-logo">Klarheit <span>am Berg</span></a>
+<a href="index.html" class="nav-logo" aria-label="Klarheit am Berg"><img src="images/logo-klarheit-am-berg.png" alt="Klarheit am Berg"></a>
 <ul class="nav-links">
 <li><a href="index.html#about">Über mich</a></li>
 <li><a href="index.html#offers">Angebote</a></li>

@@ -49,6 +49,9 @@
     justify-content: space-between;
   }
   .nav-logo { color: var(--white); font-size: 17px; font-weight: 700; text-decoration: none; letter-spacing: 0.3px; }
+
+        .nav-logo img { display: block; height: 44px; width: auto; }
+        @media (max-width: 768px) { .nav-logo img { height: 36px; } }
   .nav-logo span { color: var(--amber); }
   .nav-back { color: var(--cream); font-size: 13px; text-decoration: none; opacity: 0.8; font-family: sans-serif; }
   .nav-back:hover { opacity: 1; }
@@ -288,7 +291,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Klarheit <span>am Berg</span></a>
+  <a href="index.html" class="nav-logo" aria-label="Klarheit am Berg"><img src="images/logo-klarheit-am-berg.png" alt="Klarheit am Berg"></a>
   <a href="lesachtal.html" class="nav-back">← Zurück zum Lesachtal</a>
 </nav>
 

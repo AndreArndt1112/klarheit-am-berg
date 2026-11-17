@@ -430,6 +430,12 @@
             color: var(--amber);
         }
 
+        .nav-logo img {
+            display: block;
+            height: 48px;
+            width: auto;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -1499,6 +1505,10 @@
                 display: none;
             }
 
+            .nav-logo img {
+                height: 38px;
+            }
+
             .hamburger {
                 display: flex;
             }
@@ -1759,7 +1769,7 @@
     <!-- ===== NAVIGATION ===== -->
     <nav class="nav" id="nav">
         <div class="nav-inner">
-            <a href="#" class="nav-logo">Klarheit <span>am Berg</span></a>
+            <a href="#" class="nav-logo" aria-label="Klarheit am Berg"><img src="images/logo-klarheit-am-berg.png" alt="Klarheit am Berg"></a>
             <ul class="nav-links">
                 <li><a href="#wege">Zwei Wege</a></li>
                 <li><a href="#about">Über mich</a></li>
