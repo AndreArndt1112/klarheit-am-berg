@@ -1,6 +1,12 @@
 {
  "Coaching": [
   {
+   "datei": "coaching-erfolg-ist-mehr-als-eine-zahl",
+   "titel": "Erfolg ist mehr als eine Zahl",
+   "quer": false,
+   "dauer": 60
+  },
+  {
    "datei": "coaching-einfach-mal-innehalten",
    "titel": "Einfach mal innehalten",
    "quer": false,
